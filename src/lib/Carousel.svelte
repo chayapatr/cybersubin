@@ -1,13 +1,30 @@
 <script>
 	import Card from '$lib/Card.svelte';
 	import { onMount } from 'svelte';
+	import { current } from './store';
 
 	// Credit: Hoang Tran (https://fb.com/99.hoangtran)
 
-	var radius = 800; // how big of the radius
+	let radius = 800; // how big of the radius
 
 	onMount(() => {
 		setTimeout(init, 0);
+
+		// get document seize
+		var w = document.documentElement.clientWidth;
+		// if mobile radius = 500
+		if (w < 768) {
+			radius = 500;
+		}
+
+		window.addEventListener('resize', function (event) {
+			var w = document.documentElement.clientWidth;
+			if (w < 768) {
+				radius = 500;
+			} else {
+				radius = 800;
+			}
+		});
 
 		var odrag = document.getElementById('drag-container');
 		var ospin = document.getElementById('spin-container');
@@ -99,12 +116,16 @@
 
 <div class="flex h-screen w-screen items-center justify-center overflow-hidden">
 	<div id="drag-container">
-		<div id="spin-container" style="animation: spin 50s infinite linear" class="aspect-[3/4] h-24">
+		<div
+			id="spin-container"
+			style="animation: spin 50s infinite linear"
+			class="aspect-[3/4] h-16 lg:h-24"
+		>
 			{#each [...Array(59)].map((n, i) => i) as i}
 				<Card {i} />
 			{/each}
 		</div>
-		<p>MOVEMENT 1<br />FLYING DINOSAUR</p>
+		<p>{$current}</p>
 		<div id="ground"></div>
 	</div>
 </div>

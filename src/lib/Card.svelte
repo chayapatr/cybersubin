@@ -1,11 +1,31 @@
 <script>
+	import { current } from './store';
+
 	export let i;
+
+	let danceName = [
+		'Flying Dinosaur',
+		'Cyclist',
+		'Dancing Robot',
+		'Dragon Fire',
+		'Flying Fish',
+		'Horse',
+		'Emperor Penguin',
+		'Enormous Elephant',
+		'Rainbow Frog',
+		'Dancing Monkey'
+	];
 </script>
 
-<div class="card bg-neutral-800/30 p-1">
+<button
+	class="card bg-neutral-800/30 p-1"
+	on:click={() => {
+		$current = `Dance ${i + 1} ${danceName[(i % danceName.length) - 1]}`.toUpperCase();
+	}}
+>
 	<!-- <div class="text-xs text-white">hello world!</div> -->
 	<img src={`/image${(i % 6) + 1}.png`} class="h-full w-full" alt="" />
-</div>
+</button>
 
 <style>
 	.card {

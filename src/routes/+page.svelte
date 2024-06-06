@@ -1,11 +1,9 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import simpleParallax from 'simple-parallax-js?client';
-	import Card from '$lib/Card.svelte';
 	import Carousel from '$lib/Carousel.svelte';
 	let i = 1;
 	let img: HTMLElement;
-	$: dance = Math.floor(i / (360 / 58)) + 1;
 
 	let curX = 0,
 		curY = 0;
@@ -16,19 +14,6 @@
 			curY = e.clientY;
 		});
 	});
-
-	let danceName = [
-		'Flying Dinosaur',
-		'Cyclist',
-		'Dancing Robot',
-		'Dragon Fire',
-		'Flying Fish',
-		'Horse',
-		'Emperor Penguin',
-		'Enormous Elephant',
-		'Rainbow Frog',
-		'Dancing Monkey'
-	];
 </script>
 
 <section class="hero" id="first">
