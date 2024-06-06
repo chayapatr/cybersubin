@@ -6,6 +6,7 @@
 	// Credit: Hoang Tran (https://fb.com/99.hoangtran)
 
 	let radius = 800; // how big of the radius
+	let n = 59;
 
 	onMount(() => {
 		setTimeout(init, 0);
@@ -36,6 +37,9 @@
 		ground.style.height = radius * 3 + 'px';
 
 		function init(delayTime) {
+			odrag = document.getElementById('drag-container');
+			ospin = document.getElementById('spin-container');
+			aEle = ospin.getElementsByClassName('card');
 			for (var i = 0; i < aEle.length; i++) {
 				aEle[i].style.transform =
 					'rotateY(' + i * (360 / aEle.length) + 'deg) translateZ(' + radius + 'px)';
@@ -107,6 +111,15 @@
 		// 	if (radius + d > 800) radius += d;
 		// 	init(1);
 		// };
+
+		// setTimeout(() => {
+		// 	console.log('change n!');
+		// 	n = 20;
+		// 	radius = 400;
+		// 	requestAnimationFrame(() => {
+		// 		init(1);
+		// 	});
+		// }, 3000);
 	});
 </script>
 
@@ -117,13 +130,15 @@
 			style="animation: spin 50s infinite linear"
 			class="aspect-[3/4] h-16 lg:h-24"
 		>
-			{#each [...Array(59)].map((n, i) => i) as i}
+			{#each [...Array(n)].map((n, i) => i) as i}
 				<Card {i} />
 			{/each}
 		</div>
 		<div id="ground"></div>
 		<div class="z-50" id="text">
-			<p>{$current}</p>
+			<p>
+				{$current}
+			</p>
 		</div>
 	</div>
 </div>
