@@ -2,7 +2,7 @@
 	import { onMount } from 'svelte';
 	import simpleParallax from 'simple-parallax-js?client';
 	import Carousel from '$lib/Carousel.svelte';
-	let i = 1;
+	import { code } from '$lib/store';
 	let img: HTMLElement;
 
 	let curX = 0,
@@ -45,6 +45,19 @@
 			>
 				Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet
 				consectetur adipisicing elit.
+			</div>
+			<!-- toggle button -->
+			<div class="flex items-center gap-2">
+				<div class="font-light">CODE</div>
+				<div
+					on:click={() => {
+						$code = !$code;
+					}}
+					class={`flex h-5 w-9 rounded-full border border-white ${$code ? 'justify-start' : 'justify-end'}`}
+				>
+					<div class="aspect-square h-full rounded-full bg-white"></div>
+				</div>
+				<div class="font-light">CULTURE</div>
 			</div>
 		</div>
 		<!-- <div class="absolute h-full w-full select-none overflow-hidden">
@@ -126,7 +139,6 @@
 	.ctn::-webkit-scrollbar {
 		display: none; /* Safari and Chrome */
 	}
-
 	.ctn {
 		position: absolute;
 		left: 50%;
@@ -144,7 +156,7 @@
 	} */
 
 	h1 {
-		@apply text-[4rem] font-extralight leading-none lg:text-[10rem];
+		@apply text-[4rem] font-[100] leading-none lg:text-[10rem];
 	}
 	h3 {
 		@apply text-[3rem] font-extralight leading-none lg:text-[6rem];

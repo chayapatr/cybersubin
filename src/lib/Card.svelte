@@ -1,5 +1,5 @@
 <script>
-	import { current } from './store';
+	import { code, current } from './store';
 
 	export let i;
 
@@ -18,23 +18,28 @@
 </script>
 
 <button
-	class="card bg-neutral-800/30 p-1"
+	class="card bg-neutral-800/30"
 	on:click={() => {
 		$current = `Dance ${i + 1} ${danceName[(i % danceName.length) - 1]}`.toUpperCase();
 	}}
 >
-	<!-- <div class="text-xs text-white">hello world!</div> -->
-	<img src={`/image${(i % 6) + 1}.png`} class="h-full w-full" alt="" />
+	{#if $code}
+		<div class="w-[150%] -translate-x-3 lg:-translate-x-5">
+			<img src={`/code/${i + 1}.jpg`} alt="" />
+		</div>
+	{:else}
+		<img src={`/original/${i + 1}.jpg`} alt="" />
+	{/if}
 </button>
 
 <style>
 	.card {
 		-webkit-transform-style: preserve-3d;
 		transform-style: preserve-3d;
-		@apply absolute left-0 top-0 flex h-full w-full items-center justify-center rounded-md border border-neutral-500  shadow-sm;
+		@apply absolute left-0 top-0 h-full w-full overflow-hidden rounded-md border  border-neutral-500 opacity-50 shadow-sm;
 	}
 
 	.card:hover {
-		@apply bg-neutral-500/30 shadow-md;
+		@apply bg-neutral-500/30 opacity-100 shadow-md;
 	}
 </style>

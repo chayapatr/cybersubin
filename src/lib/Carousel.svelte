@@ -10,12 +10,8 @@
 	onMount(() => {
 		setTimeout(init, 0);
 
-		// get document seize
 		var w = document.documentElement.clientWidth;
-		// if mobile radius = 500
-		if (w < 768) {
-			radius = 500;
-		}
+		if (w < 768) radius = 500;
 
 		window.addEventListener('resize', function (event) {
 			var w = document.documentElement.clientWidth;
@@ -44,7 +40,7 @@
 				aEle[i].style.transform =
 					'rotateY(' + i * (360 / aEle.length) + 'deg) translateZ(' + radius + 'px)';
 				aEle[i].style.transition = 'transform 1s';
-				aEle[i].style.transitionDelay = 0.2;
+				aEle[i].style.transitionDelay = 0.1;
 			}
 		}
 

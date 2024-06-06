@@ -2,12 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+	font-family: 'mono';
+	src: url('/fonts/mono-extralight.ttf') format('truetype');
+	font-weight: 300;
+	font-style: regular;
+}
+
+@font-face {
+	font-family: 'mono';
+	src: url('/fonts/mono-light.ttf') format('truetype');
+	font-weight: 600;
+	font-style: regular;
+}
+
 html {
 	scroll-behavior: smooth;
 }
 
 body {
-	font-family: 'Zed Mono', monospace;
+	font-family: 'mono', monospace;
 	font-stretch: 200%;
 }
 
