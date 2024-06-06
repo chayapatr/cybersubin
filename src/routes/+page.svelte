@@ -48,16 +48,16 @@
 			</div>
 			<!-- toggle button -->
 			<div class="flex items-center gap-2">
-				<div class="font-light">CODE</div>
+				<div class="font-light">CULTURE</div>
 				<div
 					on:click={() => {
 						$code = !$code;
 					}}
-					class={`flex h-5 w-9 rounded-full border border-white ${$code ? 'justify-start' : 'justify-end'}`}
+					class={`flex h-5 w-9 rounded-full border border-white ${$code ? 'justify-end' : 'justify-start'}`}
 				>
 					<div class="aspect-square h-full rounded-full bg-white"></div>
 				</div>
-				<div class="font-light">CULTURE</div>
+				<div class="font-light">CODE</div>
 			</div>
 		</div>
 		<!-- <div class="absolute h-full w-full select-none overflow-hidden">
