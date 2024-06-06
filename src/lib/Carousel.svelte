@@ -125,8 +125,10 @@
 				<Card {i} />
 			{/each}
 		</div>
-		<p>{$current}</p>
 		<div id="ground"></div>
+		<div class="z-50" id="text">
+			<p>{$current}</p>
+		</div>
 	</div>
 </div>
 
@@ -144,11 +146,10 @@
 		transform: rotateX(-30deg);
 	}
 
-	#drag-container p {
+	#text {
 		-webkit-transform: translate(-50%, -50%) rotateX(90deg);
 		transform: translate(-50%, -50%) rotateX(90deg);
 		@apply absolute left-[50%] top-[100%] text-5xl font-extralight;
-		/* color: #fff; */
 	}
 
 	#ground {
@@ -157,7 +158,7 @@
 		left: 50%;
 		-webkit-transform: translate(-50%, -50%) rotateX(90deg);
 		transform: translate(-50%, -50%) rotateX(90deg);
-		/* background: -webkit-radial-gradient(center center, farthest-side, #9993, transparent); */
+		/* background: -webkit-radial-gradient(center center, farthest-side, #333, transparent); */
 	}
 
 	@-webkit-keyframes -global-spin {
