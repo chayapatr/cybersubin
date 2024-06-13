@@ -45,7 +45,7 @@
 			<div class="flex aspect-video w-full flex-col items-center justify-between md:aspect-[16/10]">
 				<div class="relative aspect-video w-full">
 					<div class={`aspect-video ${i % 2 ? 'bg-neutral-700' : 'bg-neutral-600'}`}></div>
-					<div class="absolute bottom-0 mb-2 w-full text-center font-bold md:mb-1">
+					<div class="absolute bottom-0 mb-3 w-full text-center font-bold md:mb-1">
 						{text[0]} <span class="md:hidden">· {text[1]}</span>
 					</div>
 				</div>
@@ -255,7 +255,7 @@
 	</div>
 
 	<div
-		class="grid h-[100svh] bg-gradient-to-b from-neutral-800 to-neutral-600 pt-16 text-white md:ml-10 md:grid-cols-3 [&>div]:max-w-md"
+		class="grid bg-gradient-to-b from-neutral-800 to-neutral-600 pb-12 pt-16 text-white md:ml-10 md:h-[100svh] md:grid-cols-3 [&>div]:max-w-md"
 	>
 		<div class="pl-8">
 			<p>
@@ -305,7 +305,7 @@
 	</div>
 
 	<nav
-		class="sticky bottom-0 z-50 w-full border-t border-y-white bg-black text-center font-bold text-white"
+		class="sticky bottom-0 z-50 w-full border-t border-y-white bg-black text-center font-bold text-white md:hidden"
 	>
 		<ul class="divide-x-white grid w-full grid-cols-4 divide-x [&>li]:p-2">
 			<li class="hover:cursor-pointer hover:bg-white hover:text-black">Past</li>
