@@ -1,164 +1,310 @@
-<script lang="ts">
-	import { onMount } from 'svelte';
-	import simpleParallax from 'simple-parallax-js?client';
+<script>
 	import Carousel from '$lib/Carousel.svelte';
-	import { code } from '$lib/store';
-	let img: HTMLElement;
-
-	let curX = 0,
-		curY = 0;
-	onMount(() => {
-		new simpleParallax(img);
-		document.addEventListener('mousemove', (e) => {
-			curX = e.clientX;
-			curY = e.clientY;
-		});
-	});
 </script>
 
-<section class="hero" id="first">
-	<div class="absolute h-[100svh] w-screen">
-		<img
-			bind:this={img}
-			src="cyber.jpg"
-			alt=""
-			id="image"
-			class="h-[100svh] w-screen object-cover opacity-50"
-		/>
+<div class="hero">
+	<nav class="w-full border-b border-y-white text-center font-bold">
+		<ul class="divide-x-white grid w-full grid-cols-4 divide-x [&>li]:p-2">
+			<li class="hover:cursor-pointer hover:bg-white hover:text-black">Past</li>
+			<li class="hover:cursor-pointer hover:bg-white hover:text-black">Present</li>
+			<li class="hover:cursor-pointer hover:bg-white hover:text-black">Future</li>
+			<li class="hover:cursor-pointer hover:bg-white hover:text-black">About</li>
+		</ul>
+	</nav>
+	<div class="flex h-full flex-col justify-between gap-16 p-6 md:items-center md:justify-center">
+		<div>
+			<div class="mt-12 text-[5rem] font-bold leading-none sm:text-8xl md:mt-0">
+				<h1>Cyber</h1>
+				<h1>Subin</h1>
+			</div>
+			<h4 class="text-4xl">Open Lab</h4>
+		</div>
+		<h5 class="max-w-[12rem] text-base md:max-w-sm md:text-center md:text-xl">
+			Evolving Cultural Heritage through Technology
+		</h5>
 	</div>
-	<div class="absolute left-0 top-0 p-6 lg:p-10">
-		<h1>CYBER</h1>
-		<h1 class="ml-24">SUBIN</h1>
-	</div>
-</section>
-
-<section class="bg-neutral-950 text-white" id="past">
-	<div class="sticky right-0 top-0 z-40 flex justify-end">
-		<div class="glass m-6 p-1">SECTION I: PAST</div>
-	</div>
-
-	<div class="hero">
-		<div class="mb-8 mt-4 space-y-4 px-8 md:mt-0">
-			<h3 class="font-extralight text-neutral-300">59 MAEBOT</h3>
+	<div class="absolute bottom-0 right-0 p-4 md:p-6">
+		<div class="divide-x-white flex rounded-full text-lg md:text-xl">
 			<div
-				class="max-w-sm border-l-neutral-400 font-light text-neutral-300 lg:ml-2 lg:border-l lg:pl-3"
+				class="rounded-l-full border border-r-[0.5px] border-white px-3 hover:bg-white hover:text-black"
 			>
-				Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet
-				consectetur adipisicing elit.
+				ก
 			</div>
-			<!-- toggle button -->
-			<div class="flex items-center gap-2">
-				<div class="font-light">CULTURE</div>
-				<div
-					on:click={() => {
-						$code = !$code;
-					}}
-					class={`flex h-5 w-9 rounded-full border border-white ${$code ? 'justify-end' : 'justify-start'}`}
-				>
-					<div class="aspect-square h-full rounded-full bg-white"></div>
-				</div>
-				<div class="font-light">CODE</div>
+			<div
+				class="rounded-r-full border border-l-[0.5px] border-white px-3 hover:bg-white hover:text-black"
+			>
+				a
 			</div>
 		</div>
-		<!-- <div class="absolute h-full w-full select-none overflow-hidden">
-			<div class="ctn">
-				<div
-					class="relative h-[60svh] w-screen"
-					style={`
-		        transform-style: preserve-3d;
-                transform: perspective(1000px) rotateX(338deg) rotateY(${-i}deg) rotateZ(8deg);`}
-				>
-					{#each [...Array(59)].map((n, i) => i) as n}
-						<Card i={n} current={dance === n + 1} />
-					{/each}
+	</div>
+</div>
+
+<div class="hero">
+	<div class="grid w-full grid-cols-3 gap-y-12">
+		{#each [['Past', '1924'], ['Present', '2017'], ['Future', '2024']] as text, i}
+			<div class="flex aspect-[16/10] w-full flex-col items-center justify-between">
+				<div class="relative aspect-video w-full">
+					<div class={`aspect-video ${i % 2 ? 'bg-neutral-700' : 'bg-neutral-600'}`}></div>
+					<div class="absolute bottom-0 mb-1 w-full text-center font-bold">{text[0]}</div>
 				</div>
-            </div>
-			</div> -->
-		<div class="z-50">
-			<Carousel />
+				<div>{text[1]}</div>
+			</div>
+		{/each}
+		<div class="px-8">
+			<div class="mb-4 text-8xl">100</div>
+			<p class="max-w-sm text-2xl">years journey of choreography from culture to computer</p>
 		</div>
-		<!-- 
-		<div
-			class="absolute bottom-0 flex w-screen flex-col items-start justify-center gap-8 px-8 py-4"
-		>
-			{#key dance}
-				<div class="group hover:cursor-none">
-					<h3 class="">
-						{dance}
-						{danceName[(dance % danceName.length) - 1]}
-					</h3>
-					<div
-						class="fixed -mx-5 -my-5 hidden size-20 items-center justify-center rounded-full border border-white bg-white/20 group-hover:flex"
-						style={`
-                        backdrop-filter: blur(3px);
-	                    -webkit-backdrop-filter: blur(3px);
-                        top: ${curY}px;
-                        left: ${curX}px;
-                    `}
-					>
-						more
-					</div>
+		<div class="max-w-md">
+			<p>
+				Traditional dance forms serve as living cultural heritage, with choreographic knowledge
+				transmitted through embodied practices. While digitization has enabled preservation, the
+				deeper layers of tacit knowledge and improvisation remain frozen. This research introduces
+				an approach to computationally formalize traditional dance knowledge as an interactive
+				model, combining human dancers with virtual partners powered by computational systems
+				derived from dance principles.
+			</p>
+		</div>
+		<div class="max-w-md space-y-6">
+			<p>
+				A multidisciplinary team developed a Human-AI system based on the "No. 60" principles
+				established by Thai choreographer Pichet Klunchun, creating computational procedures to
+				replicate the effects of the principles. This paradigm allows practitioners to interact with
+				computational manifestations of ancestral choreographic knowledge, acknowledging non-Western
+				knowledge systems often overlooked in colonial understandings of AI.
+			</p>
+			<button class="rounded-full border border-white px-3 py-1">Learn More</button>
+		</div>
+	</div>
+</div>
+
+<div class="relative">
+	<div
+		class="sticky left-0 top-[100%] z-50 -mb-10 mt-[100svh] block w-[100svh] -rotate-90 border-b border-b-white bg-neutral-800 font-bold text-white"
+		style="transform-origin: top left;"
+	>
+		<div class="divide-x-white grid w-full grid-cols-4 divide-x">
+			<div class="w-full p-2 text-center">About</div>
+			<div class="w-full p-2 text-center">Future</div>
+			<div class="w-full p-2 text-center">Present</div>
+			<div class="w-full p-2 text-center">Past</div>
+		</div>
+	</div>
+
+	<div
+		class="relative ml-10 flex h-[120svh] flex-col bg-gradient-to-b from-black to-neutral-800 text-white"
+		style="margin-top: calc(-100svh - 2.6rem)"
+	>
+		<div class="z-10 grid grid-cols-5 gap-4 p-8">
+			<h2 class="text-6xl font-bold text-gold">Try<br />it!</h2>
+			<div class="col-span-3 flex h-min gap-4">
+				<div class="rounded-full border border-white px-4 py-2">All</div>
+				<div class="rounded-full border border-white px-4 py-2">Movement 1-20</div>
+				<div class="rounded-full border border-white px-4 py-2">Movement 21-40</div>
+				<div class="rounded-full border border-white px-4 py-2">Movement 41-59</div>
+			</div>
+			<div>
+				<h4 class="mb-4 text-4xl text-gold">Mae Bot Yai</h4>
+				<p>This is a 100 years journey of choreography from culture to computer</p>
+			</div>
+		</div>
+		<div class="absolute bottom-0 z-0 h-[100svh]" style="width: calc(100vw - 2.6rem);">
+			<div class="relative h-full overflow-hidden">
+				<Carousel />
+				<div class="absolute bottom-0 m-4 w-full text-center">
+					Please select the movement to learn more
 				</div>
-			{/key}
-		</div> -->
+			</div>
+		</div>
 	</div>
-</section>
 
-<section class="hero bg-neutral-950" id="present">
-	<div class="sticky right-0 top-0 flex justify-end">
-		<div class="glass m-6 p-1">SECTION II: PRESENT</div>
+	<div class="ml-10 grid h-[100svh] grid-cols-3 bg-neutral-800 pt-16">
+		<div class="flex flex-col gap-16 px-8">
+			<h2 class="text-6xl font-bold text-gold">The<br />Past</h2>
+			<div class="space-y-2">
+				<h4 class="text-3xl text-gold">Mae Bot Yai</h4>
+				<p class="max-w-xs text-white">
+					This is a 100 years journey of choreography from culture to computer
+				</p>
+			</div>
+		</div>
+		<div class="col-span-2 space-y-8">
+			<div class="aspect-[21/9] w-full bg-neutral-600" />
+			<div class="grid grid-cols-2 text-white">
+				<div class="max-w-md">
+					<p>
+						Traditional dance forms serve as living cultural heritage, with choreographic knowledge
+						transmitted through embodied practices. While digitization has enabled preservation, the
+						deeper layers of tacit knowledge and improvisation remain frozen. This research
+						introduces an approach to computationally formalize traditional dance knowledge as an
+						interactive model, combining human dancers with virtual partners powered by
+						computational systems derived from dance principles.
+					</p>
+				</div>
+				<div class="max-w-md space-y-6">
+					<p>
+						A multidisciplinary team developed a Human-AI system based on the "No. 60" principles
+						established by Thai choreographer Pichet Klunchun, creating computational procedures to
+						replicate the effects of the principles. This paradigm allows practitioners to interact
+						with computational manifestations of ancestral choreographic knowledge, acknowledging
+						non-Western knowledge systems often overlooked in colonial understandings of AI.
+					</p>
+					<button class="rounded-full border border-white px-3 py-1">Learn More</button>
+				</div>
+			</div>
+		</div>
 	</div>
-	<div class="absolute bottom-0 left-0 p-10">
-		<h1>6 ELEMENTS</h1>
-	</div>
-	<div class="absolute bottom-0 right-0 m-6">
-		<a href="#future">↓</a>
-	</div>
-</section>
 
-<section class="hero bg-neutral-950" id="future">
-	<div class="sticky right-0 top-0 flex justify-end">
-		<div class="glass m-6 p-1">SECTION III: FUTURE</div>
+	<div class="hero ml-10">
+		<div class="grid grid-cols-3">
+			<h2 class="p-8 text-6xl font-bold text-orange">The<br />Present</h2>
+			<div />
+			<div class="space-y-2 p-8">
+				<h4 class="text-3xl text-orange">The Diagram</h4>
+				<p class="max-w-xs text-white">
+					This is a 100 years journey of choreography from culture to computer
+				</p>
+			</div>
+		</div>
+		<div class="flex h-full w-full items-center justify-center p-8">
+			<img src="/six.png" class="w-full" alt="" />
+		</div>
 	</div>
-	<div class="absolute bottom-0 left-0 p-10 mix-blend-difference">
-		<h1>CYBER SUBIN</h1>
+
+	<div class="ml-10 grid h-[100svh] grid-cols-3 bg-neutral-800 pt-16">
+		<div class="flex flex-col gap-16 px-8">
+			<h2 class="text-6xl font-bold text-orange">The<br />Present</h2>
+			<div class="space-y-2">
+				<h4 class="text-3xl text-orange">Mae Bot Yai</h4>
+				<p class="max-w-xs text-white">
+					This is a 100 years journey of choreography from culture to computer
+				</p>
+			</div>
+		</div>
+		<div class="col-span-2 space-y-8">
+			<div class="aspect-[21/9] w-full bg-neutral-600" />
+			<div class="grid grid-cols-2 text-white">
+				<div class="max-w-md"></div>
+				<div class="max-w-md space-y-6">
+					<p>
+						A multidisciplinary team developed a Human-AI system based on the "No. 60" principles
+						established by Thai choreographer Pichet Klunchun, creating computational procedures to
+						replicate the effects of the principles. This paradigm allows practitioners to interact
+						with computational manifestations of ancestral choreographic knowledge, acknowledging
+						non-Western knowledge systems often overlooked in colonial understandings of AI.
+					</p>
+					<button class="rounded-full border border-white px-3 py-1">Learn More</button>
+				</div>
+			</div>
+		</div>
 	</div>
-	<div class="absolute bottom-0 right-0 m-6">
-		<a href="#first">↑</a>
+
+	<div class="hero relative ml-10">
+		<div class="z-50 grid grid-cols-3">
+			<h2 class="p-8 text-6xl font-bold text-red">The<br />Future</h2>
+			<div />
+			<div class="space-y-6 py-8">
+				<p class="max-w-md">
+					Traditional dance forms serve as living cultural heritage, with choreographic knowledge
+					transmitted through embodied practices. While digitization has enabled preservation, the
+					deeper layers of tacit knowledge and improvisation remain frozen. This research introduces
+					an approach to computationally formalize traditional dance knowledge as an interactive
+					model, combining human dancers with virtual partners powered by computational systems
+					derived from dance principles.
+				</p>
+				<button class="rounded-full border border-white px-3 py-1">Let's Experiment</button>
+			</div>
+		</div>
+		<div class="absolute left-0 top-0 z-0 h-full w-full overflow-hidden">
+			<img src="/cybersubin.png" class="min-h-[100svh] min-w-[100vw] object-cover" alt="" />
+		</div>
 	</div>
-</section>
+
+	<div class="ml-10 grid h-[100svh] grid-cols-3 bg-neutral-800 pt-16">
+		<div class="flex flex-col gap-16 px-8">
+			<h2 class="text-6xl font-bold text-red">The<br />Future</h2>
+		</div>
+		<div class="col-span-2 space-y-8">
+			<div class="aspect-[21/9] w-full bg-neutral-600" />
+			<div class="grid grid-cols-2 text-white">
+				<div class="max-w-md">
+					<p>
+						A multidisciplinary team developed a Human-AI system based on the "No. 60" principles
+						established by Thai choreographer Pichet Klunchun, creating computational procedures to
+						replicate the effects of the principles. This paradigm allows practitioners to interact
+						with computational manifestations of ancestral choreographic knowledge, acknowledging
+						non-Western knowledge systems often overlooked in colonial understandings of AI.
+					</p>
+				</div>
+				<div class="max-w-md space-y-6">
+					<p>
+						A multidisciplinary team developed a Human-AI system based on the "No. 60" principles
+						established by Thai choreographer Pichet Klunchun, creating computational procedures to
+						replicate the effects of the principles. This paradigm allows practitioners to interact
+						with computational manifestations of ancestral choreographic knowledge, acknowledging
+						non-Western knowledge systems often overlooked in colonial understandings of AI.
+					</p>
+					<button class="rounded-full border border-white px-3 py-1">Learn More</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div
+		class="ml-10 grid h-[100svh] grid-cols-3 bg-gradient-to-b from-neutral-800 to-neutral-600 pt-16 text-white [&>div]:max-w-md"
+	>
+		<div class="pl-8">
+			<p>
+				<span class="font-bold">Open Lab:</span><br />
+				Chayapatr Archiwaranguprok<br />
+				Phoomparin Mano<br />
+				Piyaporn Bhongse-tong<br />
+				Pichet Klunchun<br />
+				Pat Pataranutaporn
+			</p>
+		</div>
+		<div>
+			<p>
+				<span class="font-bold">Co-creator:</span><br />
+				Pichet Klunchun<br />
+				Pat Pataranutaporn<br /><br />
+				<span class="font-bold">Choreographer/Director:</span><br />
+				Pichet Klunchun<br /><br />
+				<span class="font-bold">Dancers:</span><br />
+				Padung Jumpan<br />
+				Tas Chongchadklang<br />
+				Chang Hong Chung<br />
+				King Fai Tsang<br /><br />
+				<span class="font-bold">Music Director and Composer:</span><br />
+				Lamtharn Hantrakul<br /><br />
+				<span class="font-bold">3D and Animation Creator:</span><br />
+				Piyaporn Bhongse-tong
+			</p>
+		</div>
+		<div>
+			<p>
+				<span class="font-bold">Creative Technologist:</span><br />
+				Phoomparin Mano<br />
+				Chayapatr Archiwaranguprok<br /><br />
+				<span class="font-bold">Cyborg Scientist and Philosopher:</span><br />
+				Pat Pataranutaporn<br /><br />
+				<span class="font-bold">Lighting Designer:</span><br />
+				Ray Tseng<br /><br />
+				<span class="font-bold">Dramaturg:</span><br />
+				How Ngean Lim<br /><br />
+				<span class="font-bold">Producer:</span><br />
+				Sojirat Singholka<br /><br />
+				<span class="font-bold">Stage Manager:</span><br />
+				Jirach Eaimsa-Ard
+			</p>
+		</div>
+	</div>
+</div>
 
 <style>
 	.hero {
-		@apply relative min-h-[100svh] bg-neutral-950 text-white;
+		@apply flex h-[100svh] flex-col bg-black text-white;
 	}
-	.ctn {
-		-ms-overflow-style: none; /* Internet Explorer 10+ */
-		scrollbar-width: none; /* Firefox */
-	}
-	.ctn::-webkit-scrollbar {
-		display: none; /* Safari and Chrome */
-	}
-	.ctn {
-		position: absolute;
-		left: 50%;
-		top: 50%;
-		transform: translate(-50%, -50%);
-		transform-style: preserve-3d;
-	}
-
-	/* input[type='range'] {
-		-webkit-appearance: none;
-		appearance: none;
-		background: transparent;
-		cursor: pointer;
-		width: 15rem;
-	} */
-
-	h1 {
-		@apply text-[4rem] font-[100] leading-none lg:text-[10rem];
-	}
-	h3 {
-		@apply text-[3rem] font-extralight leading-none lg:text-[6rem];
+	.hero-no-bg {
+		@apply flex h-[100svh] flex-col text-white;
 	}
 </style>
