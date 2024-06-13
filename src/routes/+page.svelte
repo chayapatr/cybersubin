@@ -2,7 +2,7 @@
 	import Carousel from '$lib/Carousel.svelte';
 </script>
 
-<div class="hero">
+<div class="flex h-[100svh] flex-col bg-black text-white">
 	<nav class="w-full border-b border-y-white text-center font-bold">
 		<ul class="divide-x-white grid w-full grid-cols-4 divide-x [&>li]:p-2">
 			<li class="hover:cursor-pointer hover:bg-white hover:text-black">Past</li>
@@ -40,19 +40,25 @@
 </div>
 
 <div class="hero">
-	<div class="grid w-full grid-cols-3 gap-y-12">
+	<div class="grid w-full text-sm md:grid-cols-3 md:gap-y-12 md:text-base">
 		{#each [['Past', '1924'], ['Present', '2017'], ['Future', '2024']] as text, i}
-			<div class="flex aspect-[16/10] w-full flex-col items-center justify-between">
+			<div class="flex aspect-video w-full flex-col items-center justify-between md:aspect-[16/10]">
 				<div class="relative aspect-video w-full">
 					<div class={`aspect-video ${i % 2 ? 'bg-neutral-700' : 'bg-neutral-600'}`}></div>
-					<div class="absolute bottom-0 mb-1 w-full text-center font-bold">{text[0]}</div>
+					<div class="absolute bottom-0 mb-2 w-full text-center font-bold md:mb-1">
+						{text[0]} <span class="md:hidden">· {text[1]}</span>
+					</div>
 				</div>
-				<div>{text[1]}</div>
+				<div class="hidden md:block">{text[1]}</div>
 			</div>
 		{/each}
-		<div class="px-8">
-			<div class="mb-4 text-8xl">100</div>
-			<p class="max-w-sm text-2xl">years journey of choreography from culture to computer</p>
+	</div>
+	<div class="my-10 grid gap-y-6 px-8 md:mb-0 md:mt-12 md:grid-cols-3 md:px-0">
+		<div class="md:px-8">
+			<div class="mb-4 text-6xl md:text-8xl">100</div>
+			<p class="max-w-sm text-xl md:text-2xl">
+				years journey of choreography from culture to computer
+			</p>
 		</div>
 		<div class="max-w-md">
 			<p>
@@ -79,7 +85,7 @@
 
 <div class="relative">
 	<div
-		class="sticky left-0 top-[100%] z-50 -mb-10 mt-[100svh] block w-[100svh] -rotate-90 border-b border-b-white bg-neutral-800 font-bold text-white"
+		class="sticky left-0 top-[100%] z-50 -mb-10 mt-[100svh] hidden w-[100svh] -rotate-90 border-b border-b-white bg-neutral-800 font-bold text-white md:block"
 		style="transform-origin: top left;"
 	>
 		<div class="divide-x-white grid w-full grid-cols-4 divide-x">
@@ -91,8 +97,7 @@
 	</div>
 
 	<div
-		class="relative ml-10 flex h-[120svh] flex-col bg-gradient-to-b from-black to-neutral-800 text-white"
-		style="margin-top: calc(-100svh - 2.6rem)"
+		class="relative flex h-[120svh] flex-col bg-gradient-to-b from-black to-neutral-800 text-white md:ml-10 md:mt-[calc(-100svh_-_2.6rem)]"
 	>
 		<div class="z-10 grid grid-cols-5 gap-4 p-8">
 			<h2 class="text-6xl font-bold text-gold">Try<br />it!</h2>
@@ -117,7 +122,7 @@
 		</div>
 	</div>
 
-	<div class="ml-10 grid h-[100svh] grid-cols-3 bg-neutral-800 pt-16">
+	<div class="grid h-[100svh] bg-neutral-800 pt-16 md:ml-10 md:grid-cols-3">
 		<div class="flex flex-col gap-16 px-8">
 			<h2 class="text-6xl font-bold text-gold">The<br />Past</h2>
 			<div class="space-y-2">
@@ -154,8 +159,8 @@
 		</div>
 	</div>
 
-	<div class="hero ml-10">
-		<div class="grid grid-cols-3">
+	<div class="hero md:ml-10">
+		<div class="grid md:grid-cols-3">
 			<h2 class="p-8 text-6xl font-bold text-orange">The<br />Present</h2>
 			<div />
 			<div class="space-y-2 p-8">
@@ -170,7 +175,7 @@
 		</div>
 	</div>
 
-	<div class="ml-10 grid h-[100svh] grid-cols-3 bg-neutral-800 pt-16">
+	<div class="grid h-[100svh] bg-neutral-800 pt-16 md:ml-10 md:grid-cols-3">
 		<div class="flex flex-col gap-16 px-8">
 			<h2 class="text-6xl font-bold text-orange">The<br />Present</h2>
 			<div class="space-y-2">
@@ -198,8 +203,8 @@
 		</div>
 	</div>
 
-	<div class="hero relative ml-10">
-		<div class="z-50 grid grid-cols-3">
+	<div class="hero relative md:ml-10">
+		<div class="z-50 grid md:grid-cols-3">
 			<h2 class="p-8 text-6xl font-bold text-red">The<br />Future</h2>
 			<div />
 			<div class="space-y-6 py-8">
@@ -219,7 +224,7 @@
 		</div>
 	</div>
 
-	<div class="ml-10 grid h-[100svh] grid-cols-3 bg-neutral-800 pt-16">
+	<div class="grid h-[100svh] bg-neutral-800 pt-16 md:ml-10 md:grid-cols-3">
 		<div class="flex flex-col gap-16 px-8">
 			<h2 class="text-6xl font-bold text-red">The<br />Future</h2>
 		</div>
@@ -250,7 +255,7 @@
 	</div>
 
 	<div
-		class="ml-10 grid h-[100svh] grid-cols-3 bg-gradient-to-b from-neutral-800 to-neutral-600 pt-16 text-white [&>div]:max-w-md"
+		class="grid h-[100svh] bg-gradient-to-b from-neutral-800 to-neutral-600 pt-16 text-white md:ml-10 md:grid-cols-3 [&>div]:max-w-md"
 	>
 		<div class="pl-8">
 			<p>
@@ -298,13 +303,24 @@
 			</p>
 		</div>
 	</div>
+
+	<nav
+		class="sticky bottom-0 z-50 w-full border-t border-y-white bg-black text-center font-bold text-white"
+	>
+		<ul class="divide-x-white grid w-full grid-cols-4 divide-x [&>li]:p-2">
+			<li class="hover:cursor-pointer hover:bg-white hover:text-black">Past</li>
+			<li class="hover:cursor-pointer hover:bg-white hover:text-black">Present</li>
+			<li class="hover:cursor-pointer hover:bg-white hover:text-black">Future</li>
+			<li class="hover:cursor-pointer hover:bg-white hover:text-black">About</li>
+		</ul>
+	</nav>
 </div>
 
 <style>
 	.hero {
-		@apply flex h-[100svh] flex-col bg-black text-white;
+		@apply flex flex-col bg-black text-white md:h-[100svh];
 	}
 	.hero-no-bg {
-		@apply flex h-[100svh] flex-col text-white;
+		@apply flex flex-col text-white md:h-[100svh];
 	}
 </style>
