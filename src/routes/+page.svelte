@@ -1,5 +1,6 @@
 <script>
 	import Carousel from '$lib/Carousel.svelte';
+	import Title from '$lib/Title.svelte';
 </script>
 
 <div class="flex h-[100svh] flex-col bg-black text-white">
@@ -97,26 +98,57 @@
 	</div>
 
 	<div
-		class="relative flex h-[120svh] flex-col bg-gradient-to-b from-black to-neutral-800 text-white md:ml-10 md:mt-[calc(-100svh_-_2.6rem)]"
+		class="relative grid grid-cols-3 bg-black text-white md:ml-10 md:mt-[calc(-100svh_-_2.6rem)]"
+		id="mae-bot-yai"
+	>
+		<div class="space-y-8 p-8">
+			<Title head="The Past" title="Mae Bot Yai" color="text-gold" />
+			<p class="max-w-sm text-balance">
+				One might think that innovation and preservation are on opposite ends, but in 1924, the
+				arrival of camera technology allowed the knowledge of "Mae Bot Yai" to be recorded and
+				formalized, creating a record of Thai dance techniques that are still used to this day.
+			</p>
+		</div>
+		<div class="col-span-2">
+			<div class="relative aspect-video w-full">
+				<div class="absolute left-0 top-0 max-w-sm text-pretty p-8">
+					<p>
+						We begin our journey with "Mae Bot Yai" (the "Greater Fundamentals"), a set of 59
+						interconnected poses that constitute the foundation of traditional Thai dance. These
+						fundamentals enable dancers to execute the demanding choreography of “Khon”, a Thai
+						classical court masked dance with a history spanning centuries.
+					</p>
+				</div>
+				<img src="/cybersubin.png" class="min-h-full min-w-full object-cover" alt="" />
+			</div>
+		</div>
+		<div class="absolute bottom-0 flex flex-col gap-4 p-8">
+			<button class="btn">Thai Traiditional Dance</button>
+			<button class="btn">History of Mae Bot Yai</button>
+		</div>
+	</div>
+
+	<div
+		class="relative flex h-[120svh] flex-col bg-gradient-to-b from-black to-neutral-800 text-white md:ml-10"
 	>
 		<div class="z-10 grid grid-cols-5 gap-4 p-8">
 			<h2 class="text-6xl font-bold text-gold">Try<br />it!</h2>
 			<div class="col-span-3 flex h-min gap-4">
-				<div class="rounded-full border border-white px-4 py-2">All</div>
-				<div class="rounded-full border border-white px-4 py-2">Movement 1-20</div>
-				<div class="rounded-full border border-white px-4 py-2">Movement 21-40</div>
-				<div class="rounded-full border border-white px-4 py-2">Movement 41-59</div>
+				<div class="btn">All</div>
+				<div class="btn">Movement 1-20</div>
+				<div class="btn">Movement 21-40</div>
+				<div class="btn">Movement 41-59</div>
 			</div>
 			<div>
 				<h4 class="mb-4 text-4xl text-gold">Mae Bot Yai</h4>
-				<p>This is a 100 years journey of choreography from culture to computer</p>
+				<p>59 poses that constitute the foundation of traditional Thai dance</p>
 			</div>
 		</div>
 		<div class="absolute bottom-0 z-0 h-[100svh]" style="width: calc(100vw - 2.6rem);">
 			<div class="relative h-full overflow-hidden">
 				<Carousel />
-				<div class="absolute bottom-0 m-4 w-full text-center">
-					Please select the movement to learn more
+				<div class="absolute bottom-0 m-4 flex w-full justify-center">
+					<p class="max-w-xs text-center">Select the pose of interest and see its 3D recording</p>
 				</div>
 			</div>
 		</div>
@@ -124,12 +156,10 @@
 
 	<div class="grid h-[100svh] bg-neutral-800 pt-16 md:ml-10 md:grid-cols-3">
 		<div class="flex flex-col gap-16 px-8">
-			<h2 class="text-6xl font-bold text-gold">The<br />Past</h2>
-			<div class="space-y-2">
-				<h4 class="text-3xl text-gold">Mae Bot Yai</h4>
-				<p class="max-w-xs text-white">
-					This is a 100 years journey of choreography from culture to computer
-				</p>
+			<Title head="The Past" title="Mae Bot Yai" color="text-gold" />
+			<p class="max-w-64 text-white">Understand the Past to Understand the Future</p>
+			<div class="flex border-l border-l-gold pl-4 text-sm text-gold">
+				<p class="max-w-32">Mae Bot Yai recorded on camera in 1924</p>
 			</div>
 		</div>
 		<div class="col-span-2 space-y-8">
@@ -161,7 +191,9 @@
 
 	<div class="hero md:ml-10">
 		<div class="grid md:grid-cols-3">
-			<h2 class="p-8 text-6xl font-bold text-orange">The<br />Present</h2>
+			<div class="p-8">
+				<Title head="The Present" title="No.60" color="text-orange" />
+			</div>
 			<div />
 			<div class="space-y-2 p-8">
 				<h4 class="text-3xl text-orange">The Diagram</h4>
@@ -175,14 +207,33 @@
 		</div>
 	</div>
 
+	<div
+		class="relative flex flex-col bg-gradient-to-b from-black to-neutral-800 text-white md:ml-10"
+	>
+		<div class="z-10 grid grid-cols-5 gap-4 p-8">
+			<h2 class="text-6xl font-bold text-orange">Try<br />it!</h2>
+			<div class="col-span-3 flex h-min gap-4">
+				<p>
+					Six elements were discovered from the analysis of the Mae Bot Yai fundamentals, which aim
+					to empower choreographers and dancers to invent the next movement (the imaginary 60th
+					movement, hence the name "No. 60")
+				</p>
+			</div>
+			<div>
+				<h4 class="mb-4 text-right text-4xl text-orange">No.60</h4>
+			</div>
+		</div>
+		<div class="flex w-full justify-center py-10">
+			<img src="/6-elements.png" class="w-4/5" alt="" />
+		</div>
+	</div>
+
 	<div class="grid h-[100svh] bg-neutral-800 pt-16 md:ml-10 md:grid-cols-3">
 		<div class="flex flex-col gap-16 px-8">
-			<h2 class="text-6xl font-bold text-orange">The<br />Present</h2>
-			<div class="space-y-2">
-				<h4 class="text-3xl text-orange">Mae Bot Yai</h4>
-				<p class="max-w-xs text-white">
-					This is a 100 years journey of choreography from culture to computer
-				</p>
+			<Title head="The Present" title="No.60" color="text-orange" />
+			<p class="max-w-64 text-white">From Deconstruction to Reconstruction</p>
+			<div class="flex border-l border-l-orange pl-4 text-sm text-orange">
+				<p class="max-w-32 text-balance">Pichet Klunchun's performance in Japan</p>
 			</div>
 		</div>
 		<div class="col-span-2 space-y-8">
@@ -205,18 +256,32 @@
 
 	<div class="hero relative md:ml-10">
 		<div class="z-50 grid md:grid-cols-3">
-			<h2 class="p-8 text-6xl font-bold text-red">The<br />Future</h2>
+			<div class="p-8">
+				<Title head="The Future" title="Cyber Subin" color="text-red" />
+			</div>
 			<div />
-			<div class="space-y-6 py-8">
+			<div class="space-y-8 p-8">
 				<p class="max-w-md">
-					Traditional dance forms serve as living cultural heritage, with choreographic knowledge
-					transmitted through embodied practices. While digitization has enabled preservation, the
-					deeper layers of tacit knowledge and improvisation remain frozen. This research introduces
-					an approach to computationally formalize traditional dance knowledge as an interactive
-					model, combining human dancers with virtual partners powered by computational systems
-					derived from dance principles.
+					While the digitization approach can preserve the visual form of dance, the deeper
+					knowledge and improvisational techniques remain frozen in time rather than flourishing as
+					living practices.
 				</p>
-				<button class="rounded-full border border-white px-3 py-1">Let's Experiment</button>
+				<p class="max-w-md">
+					In 2024, a multidisciplinary team analyzed and translated the principles of Mae Bot Yai
+					and No. 60 into an interactive computational model that extends beyond a mere static
+					recording of a dance performance. They developed an interactive system that allows the
+					dancer, choreographer, and even the audience to participate in altering the choreography
+					of the virtual agents by adjusting parameters that represent traditional Thai dance
+					elements.
+				</p>
+				<button class="btn">Let's Experiment</button>
+			</div>
+		</div>
+		<div class="bg-red-500 absolute bottom-0 left-0 z-50 w-full p-6 text-4xl text-white">
+			<div class="relative w-full">
+				<div class="absolute left-0 top-[100%] block -rotate-90" style="transform-origin: top left">
+					Human-AI<br />Co-Dancing
+				</div>
 			</div>
 		</div>
 		<div class="absolute left-0 top-0 z-0 h-full w-full overflow-hidden">
@@ -226,7 +291,7 @@
 
 	<div class="grid h-[100svh] bg-neutral-800 pt-16 md:ml-10 md:grid-cols-3">
 		<div class="flex flex-col gap-16 px-8">
-			<h2 class="text-6xl font-bold text-red">The<br />Future</h2>
+			<Title head="The Future" title="Cyber Subin" color="text-red" />
 		</div>
 		<div class="col-span-2 space-y-8">
 			<div class="aspect-[21/9] w-full bg-neutral-600" />
@@ -322,5 +387,8 @@
 	}
 	.hero-no-bg {
 		@apply flex flex-col text-white md:h-[100svh];
+	}
+	.btn {
+		@apply rounded-full border border-white px-4 py-1 hover:cursor-pointer hover:bg-white hover:font-bold hover:text-black;
 	}
 </style>
