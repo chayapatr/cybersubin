@@ -5,6 +5,6 @@
 </script>
 
 <div>
-	<h2 class={`text-3xl font-bold ${color}`}>{head}</h2>
-	<h4 class="w-min text-6xl text-white">{title}</h4>
+	<h2 class={`text-2xl font-bold md:text-3xl ${color}`}>{head}</h2>
+	<h4 class="text-4xl text-white md:w-min md:text-6xl">{title}</h4>
 </div>
