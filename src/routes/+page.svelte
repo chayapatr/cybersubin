@@ -24,10 +24,10 @@
 <div class="flex h-[100svh] flex-col bg-black text-white">
 	<nav class="w-full border-b border-y-white text-center font-bold">
 		<ul class="divide-x-white grid w-full grid-cols-4 divide-x [&>li]:p-2">
-			<li class="hover:cursor-pointer hover:bg-white hover:text-black">Past</li>
-			<li class="hover:cursor-pointer hover:bg-white hover:text-black">Present</li>
-			<li class="hover:cursor-pointer hover:bg-white hover:text-black">Future</li>
-			<li class="hover:cursor-pointer hover:bg-white hover:text-black">About</li>
+			<li class="hover:cursor-pointer hover:bg-gold"><a href="#past">Past</a></li>
+			<li class="hover:cursor-pointer hover:bg-orange"><a href="#present">Present</a></li>
+			<li class="hover:cursor-pointer hover:bg-red"><a href="#future">Future</a></li>
+			<li class="hover:cursor-pointer hover:bg-black"><a href="#about">About</a></li>
 		</ul>
 	</nav>
 	<div class="flex h-full flex-col justify-between gap-16 p-6 md:items-center md:justify-center">
@@ -108,12 +108,27 @@
 		style="transform-origin: top left;"
 	>
 		<div class="divide-x-white grid w-full grid-cols-4 divide-x">
-			<div class={`w-full p-2 text-center ${current === 'about' ? 'bg-black' : ''}`}>About</div>
-			<div class={`w-full p-2 text-center ${current === 'future' ? 'bg-red' : ''}`}>Future</div>
-			<div class={`w-full p-2 text-center ${current === 'present' ? 'bg-orange' : ''}`}>
+			<a
+				href="#about"
+				class={`w-full p-2 text-center hover:bg-black ${current === 'about' ? 'bg-black' : ''}`}
+				>About</a
+			>
+			<a
+				href="#future"
+				class={`w-full p-2 text-center hover:bg-red ${current === 'future' ? 'bg-red' : ''}`}
+				>Future</a
+			>
+			<a
+				href="#present"
+				class={`w-full p-2 text-center hover:bg-orange ${current === 'present' ? 'bg-orange' : ''}`}
+			>
 				Present
-			</div>
-			<div class={`w-full p-2 text-center ${current === 'past' ? 'bg-gold' : ''}`}>Past</div>
+			</a>
+			<a
+				href="#past"
+				class={`w-full p-2 text-center hover:bg-gold ${current === 'past' ? 'bg-gold' : ''}`}
+				>Past</a
+			>
 		</div>
 	</div>
 
@@ -394,25 +409,17 @@
 		class="sticky bottom-0 z-50 w-full border-t border-y-white bg-black text-center font-bold text-white md:hidden"
 	>
 		<ul class="divide-x-white grid w-full grid-cols-4 divide-x [&>li]:p-2">
-			<li
-				class={`hover:cursor-pointer hover:bg-white hover:text-black ${current === 'past' ? 'bg-gold' : ''}`}
-			>
-				Past
+			<li class={`hover:cursor-pointer  ${current === 'past' ? 'bg-gold' : ''}`}>
+				<a href="#past">Past</a>
 			</li>
-			<li
-				class={`hover:cursor-pointer hover:bg-white hover:text-black ${current === 'present' ? 'bg-orange' : ''}`}
-			>
-				Present
+			<li class={`hover:cursor-pointer ${current === 'present' ? 'bg-orange' : ''}`}>
+				<a href="#present">Present</a>
 			</li>
-			<li
-				class={`hover:cursor-pointer hover:bg-white hover:text-black ${current === 'future' ? 'bg-red' : ''}`}
-			>
-				Future
+			<li class={`hover:cursor-pointer ${current === 'future' ? 'bg-red' : ''}`}>
+				<a href="#future">Future</a>
 			</li>
-			<li
-				class={`hover:cursor-pointer hover:bg-white hover:text-black ${current === 'about' ? 'bg-black' : ''}`}
-			>
-				About
+			<li class={`hover:cursor-pointer ${current === 'about' ? 'bg-black' : ''}`}>
+				<a href="#about">About</a>
 			</li>
 		</ul>
 	</nav>
