@@ -1,6 +1,24 @@
 <script>
 	import Carousel from '$lib/Carousel.svelte';
 	import Title from '$lib/Title.svelte';
+	import { onMount } from 'svelte';
+
+	let current = '';
+	onMount(() => {
+		let observer = new IntersectionObserver((entries) => {
+			entries.forEach((entry) => {
+				if (entry.isIntersecting) {
+					// console.log(entry.target.id, 'visivle');
+					current = entry.target.id;
+				}
+			});
+		});
+
+		observer.observe(document.querySelector('#past'));
+		observer.observe(document.querySelector('#present'));
+		observer.observe(document.querySelector('#future'));
+		observer.observe(document.querySelector('#about'));
+	});
 </script>
 
 <div class="flex h-[100svh] flex-col bg-black text-white">
@@ -84,22 +102,24 @@
 	</div>
 </div>
 
-<div class="relative">
+<div class="relative" id="scroll">
 	<div
 		class="sticky left-0 top-[100%] z-50 -mb-10 mt-[100svh] hidden w-[100svh] -rotate-90 border-b border-b-white bg-neutral-800 font-bold text-white md:block"
 		style="transform-origin: top left;"
 	>
 		<div class="divide-x-white grid w-full grid-cols-4 divide-x">
-			<div class="w-full p-2 text-center">About</div>
-			<div class="w-full p-2 text-center">Future</div>
-			<div class="w-full p-2 text-center">Present</div>
-			<div class="w-full p-2 text-center">Past</div>
+			<div class={`w-full p-2 text-center ${current === 'about' ? 'bg-black' : ''}`}>About</div>
+			<div class={`w-full p-2 text-center ${current === 'future' ? 'bg-red' : ''}`}>Future</div>
+			<div class={`w-full p-2 text-center ${current === 'present' ? 'bg-orange' : ''}`}>
+				Present
+			</div>
+			<div class={`w-full p-2 text-center ${current === 'past' ? 'bg-gold' : ''}`}>Past</div>
 		</div>
 	</div>
 
 	<div
 		class="relative grid grid-cols-3 bg-black text-white md:ml-10 md:mt-[calc(-100svh_-_2.6rem)]"
-		id="mae-bot-yai"
+		id="past"
 	>
 		<div class="space-y-8 p-8">
 			<Title head="The Past" title="Mae Bot Yai" color="text-gold" />
@@ -189,7 +209,7 @@
 		</div>
 	</div>
 
-	<div class="hero md:ml-10">
+	<div class="hero md:ml-10" id="present">
 		<div class="grid md:grid-cols-3">
 			<div class="p-8">
 				<Title head="The Present" title="No.60" color="text-orange" />
@@ -254,7 +274,7 @@
 		</div>
 	</div>
 
-	<div class="hero relative md:ml-10">
+	<div class="hero relative md:ml-10" id="future">
 		<div class="z-50 grid md:grid-cols-3">
 			<div class="p-8">
 				<Title head="The Future" title="Cyber Subin" color="text-red" />
@@ -321,6 +341,7 @@
 
 	<div
 		class="grid bg-gradient-to-b from-neutral-800 to-neutral-600 pb-12 pt-16 text-white md:ml-10 md:h-[100svh] md:grid-cols-3 [&>div]:max-w-md"
+		id="about"
 	>
 		<div class="pl-8">
 			<p>
@@ -373,10 +394,26 @@
 		class="sticky bottom-0 z-50 w-full border-t border-y-white bg-black text-center font-bold text-white md:hidden"
 	>
 		<ul class="divide-x-white grid w-full grid-cols-4 divide-x [&>li]:p-2">
-			<li class="hover:cursor-pointer hover:bg-white hover:text-black">Past</li>
-			<li class="hover:cursor-pointer hover:bg-white hover:text-black">Present</li>
-			<li class="hover:cursor-pointer hover:bg-white hover:text-black">Future</li>
-			<li class="hover:cursor-pointer hover:bg-white hover:text-black">About</li>
+			<li
+				class={`hover:cursor-pointer hover:bg-white hover:text-black ${current === 'past' ? 'bg-gold' : ''}`}
+			>
+				Past
+			</li>
+			<li
+				class={`hover:cursor-pointer hover:bg-white hover:text-black ${current === 'present' ? 'bg-orange' : ''}`}
+			>
+				Present
+			</li>
+			<li
+				class={`hover:cursor-pointer hover:bg-white hover:text-black ${current === 'future' ? 'bg-red' : ''}`}
+			>
+				Future
+			</li>
+			<li
+				class={`hover:cursor-pointer hover:bg-white hover:text-black ${current === 'about' ? 'bg-black' : ''}`}
+			>
+				About
+			</li>
 		</ul>
 	</nav>
 </div>
