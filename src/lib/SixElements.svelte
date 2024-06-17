@@ -1,17 +1,34 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import Title from './Title.svelte';
-	import { fade } from 'svelte/transition';
+	import { fade, scale } from 'svelte/transition';
+	import Description from './Description.svelte';
+	import SixElementsContent from './SixElementsContent.svelte';
 
 	let current = 0;
-	let overall: HTMLElement, sectionTop: HTMLElement, scrollContainer: HTMLElement, one: HTMLElement;
+	let overall: HTMLElement, sectionTop: HTMLElement, one: HTMLElement, points: HTMLElement;
+
+	let styles: string[] = [];
 
 	let transform = (i: number) => {};
 	onMount(() => {
+		let scale: string = window.innerWidth > 768 ? 'scale(3,3)' : 'scale(4, 4)';
 		transform = (i: number) => {
-			const rect = one.children[i].getBoundingClientRect();
-			return `translate(calc(50vw - ${rect.left + rect.width / 2}px), calc(50vh - ${rect.top + rect.height / 2}px)) scale(3,3)`;
+			if (!styles[i]) {
+				const rect = one.children[i].getBoundingClientRect();
+				styles[i] =
+					`translate(calc(50vw - ${rect.left + rect.width / 2}px), calc(50vh - ${rect.top + rect.height / 2}px)) ${scale}`;
+				return `translate(calc(50vw - ${rect.left + rect.width / 2}px), calc(50vh - ${rect.top + rect.height / 2}px)) ${scale}`;
+			} else {
+				return styles[i];
+			}
 		};
+
+		// on window size change
+		window.addEventListener('resize', () => {
+			console.log('resize!');
+			styles = [];
+		});
 
 		const oneRect = one.getBoundingClientRect();
 		document.addEventListener('scroll', () => {
@@ -19,14 +36,15 @@
 			const sectionTopRect = sectionTop.getBoundingClientRect();
 			if (overallRect.top < 0 && overallRect.bottom > 0) {
 				const m = overallRect.height - sectionTopRect.height - oneRect.height;
-				current = Math.min(Math.floor(-overallRect.top / (m / 4)), 3);
+				current = Math.min(Math.floor(-overallRect.top / (m / 6)), 5);
+				// console.log(current);
 			}
 		});
 	});
 </script>
 
 <div
-	class="relative flex h-[500vh] min-h-full flex-col bg-black md:ml-10"
+	class="relative flex h-[800vh] min-h-full flex-col bg-black md:ml-10"
 	id="present"
 	bind:this={overall}
 >
@@ -45,7 +63,6 @@
 	<div class="sticky top-0">
 		<div class="relative">
 			<div class="flex min-h-screen w-full flex-col items-center justify-center gap-2 p-2 md:p-8">
-				<!-- <img src="/six.png" class="w-full" alt="" /> -->
 				<div
 					class="relative grid w-full grid-cols-6 gap-1 md:grid-cols-12"
 					bind:this={one}
@@ -54,7 +71,7 @@
 					{#each [...Array(59).keys()] as i}
 						<div
 							class="relative aspect-[2/3] w-full overflow-hidden transition-all duration-500"
-							style={`${current === 3 ? ` transform: ${transform(i)}; opacity: 0.5;` : ''} `}
+							style={`${current > 2 ? `transform: ${transform(i)}; opacity: 0.4;` : ''} `}
 						>
 							{#if current < 2}
 								<img
@@ -76,40 +93,33 @@
 					{/each}
 					<div
 						class={`relative flex aspect-[2/3] w-full items-center justify-center overflow-hidden text-lg transition-all duration-500`}
-						style={`${current === 3 ? ` transform: ${transform(59)}; opacity: 0.5;` : ''} `}
+						style={`${current > 2 ? ` transform: ${transform(59)}; opacity: 0.4;` : ''} `}
 					>
-						{#if current > 0 && current < 3}
+						{#if current > 0 && current < 4}
 							<span class="text-white" transition:fade>?</span>
 						{/if}
 					</div>
 				</div>
-				<!-- <div
-					bind:this={one}
-					class={`aspect-[21/9] w-full ${['bg-blue-300', 'bg-blue-400', 'bg-blue-500'][current]}`}
-				></div> -->
-
-				<!-- <div class="hidden text-center text-white md:block">
-				    {['59 Mae Bot', '59 Mae Bot + 6 Elements', '6 Elements'][current]}
-			    </div> -->
-				<!-- {:else if current === 3}
-					<div class="flex w-full items-center justify-center" transition:fade>
-						{#each [...Array(59).keys()] as i}
-							<img
-								src={`/diagram/${i + 1}.png`}
-								class="absolute left-[50%] top-[50%] -translate-x-[50%] -translate-y-[50%] object-cover opacity-40"
-								alt=""
-								transition:fade
-							/>
-						{/each}
+				{#if current > 3}
+					<div class="absolute left-0 top-0 h-[100svh] w-full" transition:fade>
+						<Description
+							textColor="text-orange"
+							text={{
+								left: 'Try it!',
+								right: 'No.60',
+								rightDesc: ''
+							}}
+						>
+							<p class="text-white">
+								Six elements were discovered from the analysis of the Mae Bot Yai fundamentals,
+								which aim to empower choreographers and dancers to invent the next movement (the
+								imaginary 60th movement, hence the name "No. 60")
+							</p></Description
+						>
+						<SixElementsContent />
 					</div>
-				{/if} -->
+				{/if}
 			</div>
 		</div>
 	</div>
 </div>
-
-<style>
-	.ts {
-		transform: translateX(calc(50vw - 30%));
-	}
-</style>

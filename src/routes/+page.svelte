@@ -234,25 +234,7 @@
 
 	<div
 		class="relative flex flex-col bg-gradient-to-b from-black to-neutral-800 text-white md:ml-10"
-	>
-		<Description
-			textColor="text-orange"
-			text={{
-				left: 'Try it!',
-				right: 'No.60',
-				rightDesc: ''
-			}}
-		>
-			<p>
-				Six elements were discovered from the analysis of the Mae Bot Yai fundamentals, which aim to
-				empower choreographers and dancers to invent the next movement (the imaginary 60th movement,
-				hence the name "No. 60")
-			</p></Description
-		>
-		<div class="flex w-full justify-center py-10">
-			<img src="/6-elements.png" class="w-4/5" alt="" />
-		</div>
-	</div>
+	></div>
 
 	<div class="grid h-[100svh] bg-neutral-800 pt-16 md:ml-10 md:grid-cols-3" id="present-end">
 		<div class="flex flex-col gap-16 px-8">
