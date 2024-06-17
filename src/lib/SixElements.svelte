@@ -53,7 +53,7 @@
 				>
 					{#each [...Array(59).keys()] as i}
 						<div
-							class="relative aspect-[2/3] w-full overflow-hidden transition-all"
+							class="relative aspect-[2/3] w-full overflow-hidden transition-all duration-500"
 							style={`${current === 3 ? ` transform: ${transform(i)}; opacity: 0.5;` : ''} `}
 						>
 							{#if current < 2}
@@ -75,7 +75,8 @@
 						</div>
 					{/each}
 					<div
-						class={`relative flex aspect-[2/3] w-full items-center justify-center overflow-hidden text-lg transition-all`}
+						class={`relative flex aspect-[2/3] w-full items-center justify-center overflow-hidden text-lg transition-all duration-500`}
+						style={`${current === 3 ? ` transform: ${transform(59)}; opacity: 0.5;` : ''} `}
 					>
 						{#if current > 0 && current < 3}
 							<span class="text-white" transition:fade>?</span>
