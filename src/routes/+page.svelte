@@ -1,5 +1,7 @@
 <script>
 	import Carousel from '$lib/Carousel.svelte';
+	import Description from '$lib/Description.svelte';
+	import SixElements from '$lib/SixElements.svelte';
 	import Title from '$lib/Title.svelte';
 	import { onMount } from 'svelte';
 
@@ -9,15 +11,16 @@
 			entries.forEach((entry) => {
 				if (entry.isIntersecting) {
 					// console.log(entry.target.id, 'visivle');
-					current = entry.target.id;
+					const id = entry.target.id;
+					current = id.split('-').at(0) || '';
 				}
 			});
 		});
 
-		observer.observe(document.querySelector('#past'));
-		observer.observe(document.querySelector('#present'));
-		observer.observe(document.querySelector('#future'));
-		observer.observe(document.querySelector('#about'));
+		['#past', '#present', '#future', '#about'].forEach((id) => {
+			const element = document.querySelector(id);
+			if (element) observer.observe(element);
+		});
 	});
 </script>
 
@@ -166,19 +169,22 @@
 	<div
 		class="relative flex h-[120svh] flex-col bg-gradient-to-b from-black to-neutral-800 text-white md:ml-10"
 	>
-		<div class="z-10 grid gap-4 p-8 md:grid-cols-5">
-			<h2 class="text-3xl font-bold text-gold md:w-min md:text-6xl">Try it!</h2>
-			<div class="col-span-3 grid h-min grid-cols-2 gap-4 md:flex">
+		<Description
+			textColor="text-gold"
+			text={{
+				left: 'Try it!',
+				right: 'Mae Bot Yai',
+				rightDesc: '59 poses that constitute the foundation of traditional Thai dance'
+			}}
+		>
+			<div class="grid h-min w-full grid-cols-2 justify-center gap-4 md:flex">
 				<div class="btn">All</div>
 				<div class="btn"><span class="hidden md:inline-block">Movement</span> 1-20</div>
 				<div class="btn"><span class="hidden md:inline-block">Movement</span> 21-40</div>
 				<div class="btn"><span class="hidden md:inline-block">Movement</span> 41-59</div>
 			</div>
-			<div>
-				<h4 class="mb-4 text-4xl text-gold">Mae Bot Yai</h4>
-				<p>59 poses that constitute the foundation of traditional Thai dance</p>
-			</div>
-		</div>
+		</Description>
+
 		<div class="absolute bottom-0 z-0 h-[100svh] w-full md:w-[calc(100vw_-_2.6rem)]">
 			<div class="relative h-full overflow-hidden">
 				<Carousel />
@@ -189,7 +195,7 @@
 		</div>
 	</div>
 
-	<div class="grid h-[100svh] bg-neutral-800 pt-16 md:ml-10 md:grid-cols-3">
+	<div class="grid h-[100svh] bg-neutral-800 pt-16 md:ml-10 md:grid-cols-3" id="past-end">
 		<div class="flex flex-col gap-16 px-8">
 			<Title head="The Past" title="Mae Bot Yai" color="text-gold" />
 			<p class="max-w-64 text-white">Understand the Past to Understand the Future</p>
@@ -224,46 +230,31 @@
 		</div>
 	</div>
 
-	<div class="hero md:ml-10" id="present">
-		<div class="grid md:grid-cols-3">
-			<div class="p-8">
-				<Title head="The Present" title="No.60" color="text-orange" />
-			</div>
-			<div />
-			<div class="space-y-2 p-8">
-				<h4 class="text-3xl text-orange">The Diagram</h4>
-				<p class="max-w-xs text-white">
-					This is a 100 years journey of choreography from culture to computer
-				</p>
-			</div>
-		</div>
-		<div class="flex h-full w-full items-center justify-center p-8">
-			<img src="/six.png" class="w-full" alt="" />
-		</div>
-	</div>
+	<SixElements />
 
 	<div
 		class="relative flex flex-col bg-gradient-to-b from-black to-neutral-800 text-white md:ml-10"
 	>
-		<div class="z-10 grid grid-cols-5 gap-4 p-8">
-			<h2 class="text-6xl font-bold text-orange">Try<br />it!</h2>
-			<div class="col-span-3 flex h-min gap-4">
-				<p>
-					Six elements were discovered from the analysis of the Mae Bot Yai fundamentals, which aim
-					to empower choreographers and dancers to invent the next movement (the imaginary 60th
-					movement, hence the name "No. 60")
-				</p>
-			</div>
-			<div>
-				<h4 class="mb-4 text-right text-4xl text-orange">No.60</h4>
-			</div>
-		</div>
+		<Description
+			textColor="text-orange"
+			text={{
+				left: 'Try it!',
+				right: 'No.60',
+				rightDesc: ''
+			}}
+		>
+			<p>
+				Six elements were discovered from the analysis of the Mae Bot Yai fundamentals, which aim to
+				empower choreographers and dancers to invent the next movement (the imaginary 60th movement,
+				hence the name "No. 60")
+			</p></Description
+		>
 		<div class="flex w-full justify-center py-10">
 			<img src="/6-elements.png" class="w-4/5" alt="" />
 		</div>
 	</div>
 
-	<div class="grid h-[100svh] bg-neutral-800 pt-16 md:ml-10 md:grid-cols-3">
+	<div class="grid h-[100svh] bg-neutral-800 pt-16 md:ml-10 md:grid-cols-3" id="present-end">
 		<div class="flex flex-col gap-16 px-8">
 			<Title head="The Present" title="No.60" color="text-orange" />
 			<p class="max-w-64 text-white">From Deconstruction to Reconstruction</p>
@@ -324,7 +315,7 @@
 		</div>
 	</div>
 
-	<div class="grid h-[100svh] bg-neutral-800 pt-16 md:ml-10 md:grid-cols-3">
+	<div class="grid h-[100svh] bg-neutral-800 pt-16 md:ml-10 md:grid-cols-3" id="future-end">
 		<div class="flex flex-col gap-16 px-8">
 			<Title head="The Future" title="Cyber Subin" color="text-red" />
 		</div>
@@ -424,15 +415,3 @@
 		</ul>
 	</nav>
 </div>
-
-<style>
-	.hero {
-		@apply flex flex-col bg-black text-white md:h-[100svh];
-	}
-	.hero-no-bg {
-		@apply flex flex-col text-white md:h-[100svh];
-	}
-	.btn {
-		@apply rounded-full border border-white px-4 py-1 text-center hover:cursor-pointer hover:bg-white hover:font-bold hover:text-black;
-	}
-</style>
