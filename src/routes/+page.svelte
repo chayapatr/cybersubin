@@ -30,12 +30,12 @@
 
 <div class="flex h-[100svh] flex-col bg-black text-white">
 	<nav class="w-full border-b border-y-white text-center font-bold">
-		<ul class="divide-x-white grid w-full grid-cols-4 divide-x [&>li]:p-2">
-			<li class="hover:cursor-pointer hover:bg-gold"><a href="#past">Past</a></li>
-			<li class="hover:cursor-pointer hover:bg-orange"><a href="#present">Present</a></li>
-			<li class="hover:cursor-pointer hover:bg-red"><a href="#future">Future</a></li>
-			<li class="hover:cursor-pointer hover:bg-black"><a href="#about">About</a></li>
-		</ul>
+		<div class="divide-x-white z-50 grid w-full grid-cols-4 divide-x [&>a]:p-2">
+			<a href="#past" class="hover:cursor-pointer hover:bg-gold">Past</a>
+			<a href="#present" class="hover:cursor-pointer hover:bg-orange">Present</a>
+			<a href="#future" class="hover:cursor-pointer hover:bg-red">Future</a>
+			<a href="#about" class="hover:cursor-pointer hover:bg-neutral-800">About</a>
+		</div>
 	</nav>
 	<div class="flex h-full flex-col justify-between gap-16 p-6 md:items-center md:justify-center">
 		<div>

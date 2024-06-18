@@ -6,25 +6,27 @@ Evolving Culture Heritage through Techonology
 
 ### Overall + Introduction
 
-- [ ] Responsiveness
+- [x] Responsiveness
 - [ ] Hero Character + Parallel Effect
-- [ ] Sidebar Highlight
-- [ ] Add Images
+- [x] Sidebar Highlight
+- [x] Add Images
+- [ ] i18n
 
 ### The Past
 
-- [ ] Add Images
-- [ ] Carousel Functionality
+- [x] Add Images
+- [x] Carousel Functionality
+- [ ] Fix generate 59
 - [ ] 3D Character Page
 
 ### The Present
 
-- [ ] Add Images
-- [ ] 59x Six Elements Image
-- [ ] Merge Animation
+- [x] Add Images
+- [x] 59x Six Elements Image
+- [x] Merge Animation
 - [ ] Six Element Explorer
 
 ### The Future
 
-- [ ] Add Images
+- [x] Add Images
 - [ ] Revamp CyberSubin User Control
