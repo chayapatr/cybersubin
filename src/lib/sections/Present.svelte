@@ -48,12 +48,12 @@
 	id="present"
 	bind:this={overall}
 >
-	<div class="grid grid-cols-3" bind:this={sectionTop}>
-		<div class="p-8">
+	<div class="grid p-6 pt-12 md:grid-cols-3 lg:px-10" bind:this={sectionTop}>
+		<div>
 			<Title head="The Present" title="No.60" color="text-orange" />
 		</div>
 		<div />
-		<div class="flex-col items-end gap-2 p-8 text-right md:flex">
+		<div class="flex-col items-end gap-2 pt-8 md:flex md:text-right lg:mx-10 lg:pt-0">
 			<h4 class="text-3xl text-orange">The Diagram</h4>
 			<p class="max-w-xs text-white">
 				This is a 100 years journey of choreography from culture to computer
@@ -119,36 +119,6 @@
 						<SixElementsContent />
 					</div>
 				{/if}
-			</div>
-		</div>
-	</div>
-</div>
-
-<div
-	class="relative flex flex-col bg-gradient-to-b from-black to-neutral-800 text-white md:ml-10"
-></div>
-
-<div class="grid h-[100svh] bg-neutral-800 pt-16 md:ml-10 md:grid-cols-3" id="present-end">
-	<div class="flex flex-col gap-16 px-8">
-		<Title head="The Present" title="No.60" color="text-orange" />
-		<p class="max-w-64 text-white">From Deconstruction to Reconstruction</p>
-		<div class="flex border-l border-l-orange pl-4 text-sm text-orange">
-			<p class="max-w-32 text-balance">Pichet Klunchun's performance in Japan</p>
-		</div>
-	</div>
-	<div class="col-span-2 space-y-8">
-		<div class="aspect-[21/9] w-full bg-neutral-600" />
-		<div class="grid grid-cols-2 text-white">
-			<div class="max-w-md"></div>
-			<div class="max-w-md space-y-6">
-				<p>
-					A multidisciplinary team developed a Human-AI system based on the "No. 60" principles
-					established by Thai choreographer Pichet Klunchun, creating computational procedures to
-					replicate the effects of the principles. This paradigm allows practitioners to interact
-					with computational manifestations of ancestral choreographic knowledge, acknowledging
-					non-Western knowledge systems often overlooked in colonial understandings of AI.
-				</p>
-				<button class="rounded-full border border-white px-3 py-1">Learn More</button>
 			</div>
 		</div>
 	</div>

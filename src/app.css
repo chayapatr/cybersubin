@@ -33,7 +33,7 @@ body {
 }
 
 .hero {
-	@apply flex flex-col bg-black text-white md:h-[100svh];
+	@apply flex flex-col bg-black text-white xl:min-h-[100svh];
 }
 .hero-no-bg {
 	@apply flex flex-col text-white md:h-[100svh];

@@ -146,15 +146,12 @@
 <style>
 	#drag-container,
 	#spin-container {
-		position: relative;
 		display: -webkit-box;
 		display: -ms-flexbox;
-		display: flex;
-		margin: auto;
 		-webkit-transform-style: preserve-3d;
 		transform-style: preserve-3d;
-		-webkit-transform: rotateX(-30deg);
-		transform: rotateX(-30deg);
+		-webkit-transform: rotateX(-25deg);
+		transform: rotateX(-25deg);
 	}
 
 	#text {
@@ -165,11 +162,8 @@
 
 	#ground {
 		position: absolute;
-		top: 100%;
-		left: 50%;
 		-webkit-transform: translate(-50%, -50%) rotateX(90deg);
 		transform: translate(-50%, -50%) rotateX(90deg);
-		/* background: -webkit-radial-gradient(center center, farthest-side, #333, transparent); */
 	}
 
 	@-webkit-keyframes -global-spin {

@@ -1,8 +1,11 @@
 <script>
 	import Past from '$lib/sections/Past.svelte';
 	import Present from '$lib/sections/Present.svelte';
+	import Present2 from '$lib/sections/Present2.svelte';
 	import Future from '$lib/sections/Future.svelte';
 	import About from '$lib/sections/About.svelte';
+
+	import Title from '$lib/Title.svelte';
 
 	import { onMount } from 'svelte';
 
@@ -62,12 +65,20 @@
 	</div>
 </div>
 
-<div class="hero">
-	<div class="grid w-full text-sm md:grid-cols-3 md:gap-y-12 md:text-base">
+<div class="hero bg-black text-white">
+	<div class="grid w-full divide-y text-sm md:grid-cols-3 md:gap-y-12 md:divide-y-0 md:text-base">
 		{#each [['Past', '1924'], ['Present', '2017'], ['Future', '2024']] as text, i}
-			<div class="flex aspect-video w-full flex-col items-center justify-between md:aspect-[16/10]">
+			<div
+				class="flex aspect-video w-full flex-col items-center justify-between overflow-hidden md:aspect-[16/10]"
+			>
 				<div class="relative aspect-video w-full">
-					<div class={`aspect-video ${i % 2 ? 'bg-neutral-700' : 'bg-neutral-600'}`}></div>
+					<div class="aspect-video opacity-90">
+						<img
+							src={`/intro/${text[0].toLowerCase()}.png`}
+							class="h-full w-full object-cover"
+							alt=""
+						/>
+					</div>
 					<div class="absolute bottom-0 mb-3 w-full text-center font-bold md:mb-1">
 						{text[0]} <span class="md:hidden">· {text[1]}</span>
 					</div>
@@ -76,14 +87,13 @@
 			</div>
 		{/each}
 	</div>
-	<div class="my-10 grid gap-y-6 px-8 md:mb-0 md:mt-12 md:grid-cols-3 md:px-0">
-		<div class="md:px-8">
+
+	<div class="my-10 grid gap-y-6 px-6 text-base md:p-12 md:pt-6 lg:grid-cols-3 lg:px-0">
+		<div class="lg:px-8">
 			<div class="mb-4 text-6xl md:text-8xl">100</div>
-			<p class="max-w-sm text-xl md:text-2xl">
-				years journey of choreography from culture to computer
-			</p>
+			<p class="max-w-sm text-2xl">years journey of choreography from culture to computer</p>
 		</div>
-		<div class="max-w-md">
+		<div class="w-full text-balance lg:w-11/12">
 			<p>
 				Traditional dance forms serve as living cultural heritage, with choreographic knowledge
 				transmitted through embodied practices. While digitization has enabled preservation, the
@@ -93,7 +103,7 @@
 				derived from dance principles.
 			</p>
 		</div>
-		<div class="max-w-md space-y-6">
+		<div class="w-full space-y-6 text-pretty lg:w-11/12">
 			<p>
 				A multidisciplinary team developed a Human-AI system based on the "No. 60" principles
 				established by Thai choreographer Pichet Klunchun, creating computational procedures to
@@ -137,12 +147,11 @@
 	</div>
 
 	<Past />
-
 	<Present />
-
+	<Present2 />
 	<Future />
-
 	<About />
+
 	<nav
 		class="sticky bottom-0 z-50 w-full border-t border-y-white bg-black text-center font-bold text-white md:hidden"
 	>
