@@ -1,7 +1,8 @@
 <script>
-	import Carousel from '$lib/Carousel.svelte';
-	import Description from '$lib/Description.svelte';
-	import Title from '$lib/Title.svelte';
+	import Carousel from '$lib/Components/Carousel.svelte';
+	import Description from '$lib/Components/Description.svelte';
+	import Title from '$lib/Components/Title.svelte';
+	import { mvtSet } from '$lib/store';
 </script>
 
 <div
@@ -50,18 +51,40 @@
 		}}
 	>
 		<div class="grid h-min w-full grid-cols-2 justify-center gap-4 md:flex">
-			<div class="btn">All</div>
-			<div class="btn"><span class="hidden xl:inline-block">Movement</span> 1-20</div>
-			<div class="btn"><span class="hidden xl:inline-block">Movement</span> 21-40</div>
-			<div class="btn"><span class="hidden xl:inline-block">Movement</span> 41-59</div>
+			<button
+				on:click={() => {
+					$mvtSet = 0;
+				}}
+				class="btn">All</button
+			>
+			<button
+				on:click={() => {
+					$mvtSet = 1;
+				}}
+				class="btn"><span class="hidden xl:inline-block">Movement</span> 1-20</button
+			>
+			<button
+				on:click={() => {
+					$mvtSet = 2;
+				}}
+				class="btn"><span class="hidden xl:inline-block">Movement</span> 21-40</button
+			>
+			<button
+				on:click={() => {
+					$mvtSet = 3;
+				}}
+				class="btn"><span class="hidden xl:inline-block">Movement</span> 41-59</button
+			>
 		</div>
 	</Description>
 
 	<div
-		class="absolute bottom-0 z-0 w-full overflow-hidden md:w-[calc(100vw_-_2.6rem)] xl:h-[100svh]"
+		class="absolute bottom-0 z-0 w-full overflow-hidden xl:h-[100svh] xl:w-[calc(100vw_-_2.6rem)]"
 	>
 		<div class="relative h-full">
-			<Carousel />
+			{#key $mvtSet === 0}
+				<Carousel set={mvtSet} />
+			{/key}
 			<div class="absolute bottom-0 m-4 flex w-full justify-center">
 				<p class="max-w-xs text-center">Select the pose of interest and see its 3D recording</p>
 			</div>

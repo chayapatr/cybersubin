@@ -5,7 +5,7 @@
 	import Future from '$lib/sections/Future.svelte';
 	import About from '$lib/sections/About.svelte';
 
-	import Title from '$lib/Title.svelte';
+	import Title from '$lib/Components/Title.svelte';
 
 	import { onMount } from 'svelte';
 

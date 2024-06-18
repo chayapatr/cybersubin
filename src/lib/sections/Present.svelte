@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import Title from '../Title.svelte';
+	import Title from '../Components/Title.svelte';
 	import { fade, scale } from 'svelte/transition';
-	import Description from '../Description.svelte';
+	import Description from '../Components/Description.svelte';
 	import SixElementsContent from './SixElements.svelte';
 
 	let current = 0;

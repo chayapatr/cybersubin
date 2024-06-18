@@ -1,25 +1,36 @@
 <script>
-	import Card from '$lib/Card.svelte';
+	import Card from '$lib/Components/Card.svelte';
+	import { current } from '$lib/store';
 	import { onMount } from 'svelte';
-	import { current } from './store';
 
 	// Credit: Hoang Tran (https://fb.com/99.hoangtran)
 
-	let radius = 800; // how big of the radius
-	let n = 59;
+	export let set;
+
+	let radius = $set === 0 ? 800 : 300; // how big of the radius
+	// let n = $set === 0 ? 59 : $set === 2 ? 19 : 20;
+
+	$: arr =
+		$set === 0
+			? [...Array(59)].map((n, i) => i)
+			: [...Array(20)].map((n, i) => ($set - 1) * 20 + i);
 
 	onMount(() => {
 		setTimeout(init, 0);
 
 		var w = document.documentElement.clientWidth;
-		if (w < 768) radius = 500;
+		if (w < 768) {
+			radius = $set === 0 ? 500 : 300;
+		} else {
+			radius = $set === 0 ? 800 : 500;
+		}
 
 		window.addEventListener('resize', function (event) {
 			var w = document.documentElement.clientWidth;
 			if (w < 768) {
-				radius = 500;
+				radius = $set === 0 ? 500 : 300;
 			} else {
-				radius = 800;
+				radius = $set === 0 ? 800 : 500;
 			}
 		});
 
@@ -123,14 +134,16 @@
 	});
 </script>
 
-<div class="flex h-screen w-screen items-center justify-center overflow-hidden">
+<div
+	class={`flex h-screen w-screen items-center justify-center overflow-hidden ${$set !== 0 ? 'xl:scale-125' : ''}`}
+>
 	<div id="drag-container">
 		<div
 			id="spin-container"
 			style="animation: spin 50s infinite linear"
-			class="aspect-[3/4] h-16 lg:h-24"
+			class={`aspect-[3/4] ${$set === 0 ? 'h-16 lg:h-24' : 'h-24 lg:h-32'}`}
 		>
-			{#each [...Array(n)].map((n, i) => i) as i}
+			{#each arr as i}
 				<Card {i} />
 			{/each}
 		</div>

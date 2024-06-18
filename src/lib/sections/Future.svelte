@@ -1,5 +1,5 @@
 <script>
-	import Title from '$lib/Title.svelte';
+	import Title from '$lib/Components/Title.svelte';
 </script>
 
 <div class="relative flex min-h-[80svh] overflow-hidden text-white lg:min-h-[90svh] xl:ml-10">
