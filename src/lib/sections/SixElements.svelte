@@ -2,25 +2,24 @@
 	import { onMount } from 'svelte';
 	let points: HTMLElement, text: HTMLElement;
 
-	let lines = [];
+	let lines: { x: number; y: number }[][] = [];
 
 	const length = (x1: number, x2: number, y1: number, y2: number) => {
 		return Math.sqrt((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2));
 	};
 
 	onMount(() => {
-		console.log('foo');
 		[...points.children].forEach((element, i) => {
 			const elmRect = element.getBoundingClientRect();
 			const pointRect = points.children[i].getBoundingClientRect();
-			console.log(
-				element,
-				points.children[i],
-				elmRect,
-				pointRect,
-				document.querySelector('#asf')?.getBoundingClientRect()
-			);
-			console.log('left', pointRect.x);
+			// console.log(
+			// 	element,
+			// 	points.children[i],
+			// 	elmRect,
+			// 	pointRect,
+			// 	document.querySelector('#asf')?.getBoundingClientRect()
+			// );
+			// console.log('left', pointRect.x);
 			lines[i] = [
 				{
 					x: elmRect.left,

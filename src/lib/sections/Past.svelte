@@ -5,7 +5,7 @@
 </script>
 
 <div
-	class="relative grid grid-cols-1 bg-black text-white md:ml-10 md:mt-[calc(-100svh_-_2.6rem)] xl:grid-cols-3"
+	class="relative grid grid-cols-1 bg-black text-white md:mt-[calc(-100svh_-_2.6rem)] xl:ml-10 xl:grid-cols-3"
 >
 	<div class="space-y-8 p-6 lg:px-8">
 		<Title head="The Past" title="Mae Bot Yai" color="text-gold" />
@@ -39,7 +39,7 @@
 </div>
 
 <div
-	class="relative flex h-[120svh] flex-col bg-gradient-to-b from-black to-neutral-800 text-white md:ml-10 md:h-[90svh] lg:h-[100svh] xl:h-[110svh]"
+	class="relative flex h-[120svh] flex-col overflow-hidden bg-gradient-to-b from-black to-neutral-800 text-white md:h-[90svh] lg:h-[100svh] xl:ml-10 xl:h-[110svh]"
 >
 	<Description
 		textColor="text-gold"
@@ -57,8 +57,10 @@
 		</div>
 	</Description>
 
-	<div class="absolute bottom-0 z-0 w-full md:w-[calc(100vw_-_2.6rem)] xl:h-[100svh]">
-		<div class="relative h-full overflow-hidden">
+	<div
+		class="absolute bottom-0 z-0 w-full overflow-hidden md:w-[calc(100vw_-_2.6rem)] xl:h-[100svh]"
+	>
+		<div class="relative h-full">
 			<Carousel />
 			<div class="absolute bottom-0 m-4 flex w-full justify-center">
 				<p class="max-w-xs text-center">Select the pose of interest and see its 3D recording</p>
@@ -68,7 +70,7 @@
 </div>
 
 <div
-	class="grid grid-cols-1 bg-neutral-800 pb-12 pt-16 md:ml-10 md:grid-cols-3 lg:min-h-[100svh]"
+	class="grid grid-cols-1 bg-neutral-800 pb-12 pt-16 md:grid-cols-3 lg:min-h-[100svh] xl:ml-10"
 	id="past-end"
 >
 	<div class="flex flex-col gap-4 px-6 md:gap-16 lg:px-8">

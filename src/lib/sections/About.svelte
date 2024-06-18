@@ -1,5 +1,5 @@
 <div
-	class="grid bg-gradient-to-b from-neutral-800 to-neutral-600 pb-12 pt-16 text-white md:ml-10 md:h-[100svh] md:grid-cols-3"
+	class="grid bg-gradient-to-b from-neutral-800 to-neutral-600 pb-12 pt-16 text-white md:h-[100svh] md:grid-cols-3 xl:ml-10"
 >
 	<div class="pl-6 md:w-11/12 xl:pl-12">
 		<ul>

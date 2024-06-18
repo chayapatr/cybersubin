@@ -15,7 +15,7 @@
 			entries.forEach((entry) => {
 				if (entry.isIntersecting) {
 					const id = entry.target.id;
-					console.log(id);
+					// console.log(id);
 					current = id.split('-').at(0) || '';
 				}
 			});
@@ -118,7 +118,7 @@
 
 <div class="relative" id="scroll">
 	<div
-		class="sticky left-0 top-[100%] z-50 -mb-10 mt-[100svh] hidden w-[100svh] -rotate-90 border-b border-b-white bg-neutral-800 font-bold text-white md:block"
+		class="sticky left-0 top-[100%] z-50 -mb-10 mt-[100svh] hidden w-[100svh] -rotate-90 border-b border-b-white bg-neutral-800 font-bold text-white xl:block"
 		style="transform-origin: top left;"
 	>
 		<div class="divide-x-white grid w-full grid-cols-4 divide-x">
@@ -146,7 +146,7 @@
 		</div>
 	</div>
 
-	<div id="past" class="overflow-hidden">
+	<div id="past">
 		<Past />
 	</div>
 
@@ -164,7 +164,7 @@
 	</div>
 
 	<nav
-		class="sticky bottom-0 z-50 w-full border-t border-y-white bg-black text-center font-bold text-white md:hidden"
+		class="sticky bottom-0 z-50 w-full border-t border-y-white bg-black text-center font-bold text-white xl:hidden"
 	>
 		<ul class="divide-x-white grid w-full grid-cols-4 divide-x [&>li]:p-2">
 			<li class={`hover:cursor-pointer  ${current === 'past' ? 'bg-gold' : ''}`}>

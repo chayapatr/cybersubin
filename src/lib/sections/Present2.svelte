@@ -3,11 +3,11 @@
 </script>
 
 <div
-	class="relative flex flex-col bg-gradient-to-b from-black to-neutral-800 text-white md:ml-10"
+	class="relative flex flex-col bg-gradient-to-b from-black to-neutral-800 text-white xl:ml-10"
 ></div>
 
 <div
-	class="grid grid-cols-1 bg-neutral-800 pb-12 pt-16 md:ml-10 md:grid-cols-3 lg:min-h-[100svh]"
+	class="grid grid-cols-1 bg-neutral-800 pb-12 pt-16 md:grid-cols-3 lg:min-h-[100svh] xl:ml-10"
 	id="past-end"
 >
 	<div class="flex flex-col gap-4 px-6 md:gap-16 lg:px-8">
