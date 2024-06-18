@@ -6,7 +6,6 @@
 
 <div
 	class="relative grid grid-cols-1 bg-black text-white md:ml-10 md:mt-[calc(-100svh_-_2.6rem)] xl:grid-cols-3"
-	id="past"
 >
 	<div class="space-y-8 p-6 lg:px-8">
 		<Title head="The Past" title="Mae Bot Yai" color="text-gold" />

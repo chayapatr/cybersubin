@@ -2,10 +2,7 @@
 	import Title from '$lib/Title.svelte';
 </script>
 
-<div
-	class="relative flex min-h-[80svh] overflow-hidden text-white md:ml-10 lg:min-h-[90svh]"
-	id="future"
->
+<div class="relative flex min-h-[80svh] overflow-hidden text-white md:ml-10 lg:min-h-[90svh]">
 	<div class="z-50 grid md:grid-cols-3">
 		<div class="p-8">
 			<Title head="The Future" title="Cyber Subin" color="text-red" />

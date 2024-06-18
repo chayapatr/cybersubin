@@ -14,8 +14,8 @@
 		let observer = new IntersectionObserver((entries) => {
 			entries.forEach((entry) => {
 				if (entry.isIntersecting) {
-					// console.log(entry.target.id, 'visivle');
 					const id = entry.target.id;
+					console.log(id);
 					current = id.split('-').at(0) || '';
 				}
 			});
@@ -146,10 +146,17 @@
 		</div>
 	</div>
 
-	<Past />
+	<div id="past">
+		<Past />
+	</div>
+
 	<Present />
 	<Present2 />
-	<Future />
+
+	<div id="future">
+		<Future />
+	</div>
+
 	<About />
 
 	<nav
