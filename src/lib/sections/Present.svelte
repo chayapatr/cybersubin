@@ -25,10 +25,10 @@
 		};
 
 		// on window size change
-		window.addEventListener('resize', () => {
-			console.log('resize!');
-			styles = [];
-		});
+		// window.addEventListener('resize', () => {
+		// 	console.log('resize!');
+		// 	styles = [];
+		// });
 
 		const oneRect = one.getBoundingClientRect();
 		document.addEventListener('scroll', () => {
