@@ -6,6 +6,7 @@
 	import SixElementsContent from './SixElements.svelte';
 
 	let current = 0;
+	let show = false;
 	let overall: HTMLElement, sectionTop: HTMLElement, one: HTMLElement, points: HTMLElement;
 
 	let styles: string[] = [];
@@ -14,14 +15,14 @@
 	onMount(() => {
 		let scale: string = window.innerWidth > 768 ? 'scale(3,3)' : 'scale(4, 4)';
 		transform = (i: number) => {
-			if (!styles[i]) {
-				const rect = one.children[i].getBoundingClientRect();
-				styles[i] =
-					`translate(calc(50vw - ${rect.left + rect.width / 2}px), calc(50vh - ${rect.top + rect.height / 2}px)) ${scale}`;
-				return `translate(calc(50vw - ${rect.left + rect.width / 2}px), calc(50vh - ${rect.top + rect.height / 2}px)) ${scale}`;
-			} else {
-				return styles[i];
-			}
+			// if (!styles[i]) {
+			const rect = one.children[i].getBoundingClientRect();
+			styles[i] =
+				`translate(calc(50vw - ${rect.left + rect.width / 2}px), calc(50vh - ${rect.top + rect.height / 2}px)) ${scale}`;
+			return `translate(calc(50vw - ${rect.left + rect.width / 2}px), calc(50vh - ${rect.top + rect.height / 2}px)) ${scale}`;
+			// } else {
+			// 	return styles[i];
+			// }
 		};
 
 		// on window size change
@@ -31,13 +32,19 @@
 		// });
 
 		const oneRect = one.getBoundingClientRect();
+		const section = (n: number) => {
+			if (n < 1) return 0;
+			else if (n < 1.5) return 1;
+			else if (n < 2) return 2;
+			else return 3;
+		};
 		document.addEventListener('scroll', () => {
 			const overallRect = overall.getBoundingClientRect();
 			const sectionTopRect = sectionTop.getBoundingClientRect();
 			if (overallRect.top < 0 && overallRect.bottom > 0) {
 				const m = overallRect.height - sectionTopRect.height - oneRect.height;
-				current = Math.min(Math.floor(-overallRect.top / (m / 6)), 5);
-				// console.log(current);
+				current = section(-overallRect.top / (m / 4));
+				show = -overallRect.top / (m / 6) > 4;
 			}
 		});
 	});
@@ -48,6 +55,10 @@
 	id="present"
 	bind:this={overall}
 >
+	<!-- <div class=" sticky left-0 top-0 bg-white p-2">
+		{current}
+		{show}
+	</div> -->
 	<div class="grid p-6 pt-12 md:grid-cols-3 lg:px-10" bind:this={sectionTop}>
 		<div>
 			<Title head="The Present" title="No.60" color="text-orange" />
@@ -100,7 +111,7 @@
 						{/if}
 					</div>
 				</div>
-				{#if current > 3}
+				{#if show}
 					<div class="absolute left-0 top-0 h-[100svh] w-full" transition:fade>
 						<Description
 							textColor="text-orange"
