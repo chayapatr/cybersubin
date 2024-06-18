@@ -50,11 +50,7 @@
 	});
 </script>
 
-<div
-	class="relative flex h-[400vh] min-h-full flex-col bg-black md:ml-10"
-	id="present"
-	bind:this={overall}
->
+<div class="relative flex h-[400vh] min-h-full flex-col bg-black md:ml-10" bind:this={overall}>
 	<!-- <div class=" sticky left-0 top-0 bg-white p-2">
 		{current}
 		{show}

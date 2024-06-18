@@ -146,18 +146,22 @@
 		</div>
 	</div>
 
-	<div id="past">
+	<div id="past" class="overflow-hidden">
 		<Past />
 	</div>
 
-	<Present />
-	<Present2 />
+	<div id="present">
+		<Present />
+		<Present2 />
+	</div>
 
 	<div id="future">
 		<Future />
 	</div>
 
-	<About />
+	<div id="about">
+		<About />
+	</div>
 
 	<nav
 		class="sticky bottom-0 z-50 w-full border-t border-y-white bg-black text-center font-bold text-white md:hidden"

@@ -104,7 +104,7 @@
 	</div>
 </section>
 
-<section class="hero bg-neutral-950" id="present">
+<section class="hero bg-neutral-950">
 	<div class="sticky right-0 top-0 flex justify-end">
 		<div class="glass m-6 p-1">SECTION II: PRESENT</div>
 	</div>
