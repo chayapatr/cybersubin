@@ -1,9 +1,9 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import Title from './Title.svelte';
+	import Title from '../Title.svelte';
 	import { fade, scale } from 'svelte/transition';
-	import Description from './Description.svelte';
-	import SixElementsContent from './SixElementsContent.svelte';
+	import Description from '../Description.svelte';
+	import SixElementsContent from './SixElements.svelte';
 
 	let current = 0;
 	let overall: HTMLElement, sectionTop: HTMLElement, one: HTMLElement, points: HTMLElement;
@@ -44,7 +44,7 @@
 </script>
 
 <div
-	class="relative flex h-[800vh] min-h-full flex-col bg-black md:ml-10"
+	class="relative flex h-[400vh] min-h-full flex-col bg-black md:ml-10"
 	id="present"
 	bind:this={overall}
 >
@@ -119,6 +119,36 @@
 						<SixElementsContent />
 					</div>
 				{/if}
+			</div>
+		</div>
+	</div>
+</div>
+
+<div
+	class="relative flex flex-col bg-gradient-to-b from-black to-neutral-800 text-white md:ml-10"
+></div>
+
+<div class="grid h-[100svh] bg-neutral-800 pt-16 md:ml-10 md:grid-cols-3" id="present-end">
+	<div class="flex flex-col gap-16 px-8">
+		<Title head="The Present" title="No.60" color="text-orange" />
+		<p class="max-w-64 text-white">From Deconstruction to Reconstruction</p>
+		<div class="flex border-l border-l-orange pl-4 text-sm text-orange">
+			<p class="max-w-32 text-balance">Pichet Klunchun's performance in Japan</p>
+		</div>
+	</div>
+	<div class="col-span-2 space-y-8">
+		<div class="aspect-[21/9] w-full bg-neutral-600" />
+		<div class="grid grid-cols-2 text-white">
+			<div class="max-w-md"></div>
+			<div class="max-w-md space-y-6">
+				<p>
+					A multidisciplinary team developed a Human-AI system based on the "No. 60" principles
+					established by Thai choreographer Pichet Klunchun, creating computational procedures to
+					replicate the effects of the principles. This paradigm allows practitioners to interact
+					with computational manifestations of ancestral choreographic knowledge, acknowledging
+					non-Western knowledge systems often overlooked in colonial understandings of AI.
+				</p>
+				<button class="rounded-full border border-white px-3 py-1">Learn More</button>
 			</div>
 		</div>
 	</div>
