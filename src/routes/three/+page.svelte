@@ -68,7 +68,7 @@
 
 		loadModel = (i) => {
 			loader.load(
-				`/glb/subin${i}.glb`,
+				`/sample.glb`,
 				function (gltf) {
 					for (let i = 0; i < scene.children.length; i++) {
 						if (scene.children[i].type === 'Group') scene.remove(scene.children[i]);
