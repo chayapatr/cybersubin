@@ -20,6 +20,11 @@
 		renderer.setSize(canvasRect.width, canvasRect.height);
 		renderer.setPixelRatio(window.devicePixelRatio);
 
+		const geometry = new THREE.BoxGeometry(2, 2, 2);
+		const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
+		const cube = new THREE.Mesh(geometry, material);
+		scene.add(cube);
+
 		canvas.appendChild(renderer.domElement);
 
 		/* thest controls */
@@ -63,7 +68,7 @@
 
 		loadModel = (i) => {
 			loader.load(
-				`/sample.glb`,
+				`/glb/subin${i}.glb`,
 				function (gltf) {
 					for (let i = 0; i < scene.children.length; i++) {
 						if (scene.children[i].type === 'Group') scene.remove(scene.children[i]);
