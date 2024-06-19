@@ -3,27 +3,41 @@
 	import { onMount } from 'svelte';
 	import * as THREE from 'three';
 	import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+	import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 
-	let clock, mixer;
+	let clock, mixer, controls, canvas, camera;
 	let i = 1;
 	let loadModel = (i) => {};
 
 	onMount(() => {
 		const scene = new THREE.Scene();
-		const camera = new THREE.PerspectiveCamera(
-			75,
-			window.innerWidth / window.innerHeight,
-			0.1,
-			1000
-		);
+		camera = new THREE.PerspectiveCamera(80, window.innerWidth / window.innerHeight, 0.1, 1000);
+		camera.position.set(0, 100, 200);
 
 		const renderer = new THREE.WebGLRenderer();
-		renderer.setSize(window.innerWidth, window.innerHeight);
+		const canvasRect = canvas.getBoundingClientRect();
+		console.log(canvasRect);
+		renderer.setSize(canvasRect.width, canvasRect.height);
 		renderer.setPixelRatio(window.devicePixelRatio);
 
-		document.body.appendChild(renderer.domElement);
+		canvas.appendChild(renderer.domElement);
 
-		camera.position.set(0, 100, 200);
+		/* thest controls */
+
+		controls = new OrbitControls(camera, renderer.domElement);
+		controls.listenToKeyEvents(window); // optional
+
+		controls.enableDamping = true; // an animation loop is required when either damping or auto-rotation are enabled
+		controls.dampingFactor = 0.05;
+
+		controls.screenSpacePanning = false;
+
+		// controls.minDistance = 100;
+		// controls.maxDistance = 500;
+
+		// controls.maxPolarAngle = Math.PI / 2;
+
+		/* --- */
 
 		const hemiLight = new THREE.HemisphereLight(0xffffff, 0xffffff, 1);
 		hemiLight.position.set(30, 200, 300);
@@ -77,9 +91,12 @@
 	$: loadModel(i);
 </script>
 
-<div class="fixed flex w-screen justify-center">
+<div class="fixed z-50 flex w-screen justify-center">
 	<div class="flex w-full justify-center gap-4">
 		<input type="range" min="1" max="59" bind:value={i} />
 		<div class="text-lg text-white">current {i}</div>
+		<!-- <div class="text-lg text-white">{JSON.stringify(controls?.target)}</div> -->
 	</div>
 </div>
+
+<div bind:this={canvas} class="fixed left-0 top-0 h-screen w-screen"></div>
