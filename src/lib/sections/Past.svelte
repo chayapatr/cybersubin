@@ -79,7 +79,7 @@
 	</Description>
 
 	<div
-		class="absolute bottom-0 z-0 w-full overflow-hidden xl:h-[100svh] xl:w-[calc(100vw_-_2.6rem)]"
+		class="absolute bottom-0 z-0 h-full w-full overflow-hidden xl:h-[100svh] xl:w-[calc(100vw_-_2.6rem)]"
 	>
 		<div class="relative h-full">
 			{#key $mvtSet === 0}
