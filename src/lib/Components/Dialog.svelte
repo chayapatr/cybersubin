@@ -12,30 +12,70 @@
 	class="fixed left-0 top-0 z-[120] flex h-[100svh] w-screen items-center justify-center bg-black/80 p-4"
 >
 	<div
-		class="justfy-center glass items-between relative flex h-full w-full max-w-4xl flex-col gap-4 rounded-md border border-neutral-800 bg-neutral-900 p-2 text-white shadow-md lg:aspect-video lg:h-auto lg:w-3/4 lg:flex-row"
+		class="glass relative grid max-h-full max-w-4xl gap-4 rounded-md border border-neutral-800 bg-neutral-900 p-4 text-white shadow-md lg:h-auto lg:flex-row"
 	>
-		<div class="relative h-full overflow-hidden rounded-md bg-black xl:aspect-[3/4]">
+		<h3 class="w-full text-wrap pr-10 text-xl">
+			<span class="font-bold text-gold">Movement {$current}</span> · Khaek Tao Entering the Nest (แขกเต้าเข้ารัง)
+		</h3>
+		<div class="w-full gap-2 overflow-hidden md:flex md:flex-row">
 			<div
-				class={`pointer-events-none absolute left-0 top-0 min-h-full min-w-full`}
-				style={`opacity: ${opacity}%;`}
+				class="relative aspect-[3/4] max-h-full w-full overflow-hidden rounded-md border border-neutral-700 bg-black"
+			>
+				<Figure i={+$current} />
+				{#if img}
+					<div class="absolute right-0 top-0 aspect-[3/4] h-full w-full md:hidden">
+						<img
+							src={`/original/${$current}.jpg`}
+							class="min-h-full min-w-full object-cover"
+							alt=""
+						/>
+						<div class="absolute left-0 top-0 h-full w-full" style={`opacity: ${opacity}%`}>
+							<img
+								src={`/diagram/${$current}.png`}
+								class="min-h-full min-w-full object-cover"
+								alt=""
+							/>
+						</div>
+						<div class="absolute bottom-0 left-0 z-50 mb-2 h-8 w-full px-4">
+							<input
+								type="range"
+								name=""
+								bind:value={opacity}
+								class="mb-6 h-1 w-full cursor-pointer appearance-none rounded-lg bg-neutral-500 accent-neutral-200"
+								id=""
+							/>
+						</div>
+					</div>
+				{/if}
+			</div>
+			<div
+				class="relative hidden aspect-[3/4] w-full overflow-hidden rounded-md border border-neutral-700 bg-black md:block"
 			>
 				<img src={`/original/${$current}.jpg`} class="min-h-full min-w-full object-cover" alt="" />
+				<div class="absolute left-0 top-0 h-full w-full" style={`opacity: ${opacity}%`}>
+					<img src={`/diagram/${$current}.png`} class="min-h-full min-w-full object-cover" alt="" />
+				</div>
+				<div class="absolute bottom-0 left-0 z-50 mb-2 h-8 w-full px-4">
+					<input
+						type="range"
+						name=""
+						bind:value={opacity}
+						class="mb-6 h-1 w-full cursor-pointer appearance-none rounded-lg bg-neutral-500 accent-neutral-200"
+						id=""
+					/>
+				</div>
 			</div>
-			<Figure i={+$current} />
-		</div>
-		<div class="flex h-full flex-col gap-2">
-			<!-- <input type="range" bind:value={i} min="1" max="59" /> -->
-			<h3 class="text-xl">Dance {$current}</h3>
-			<div>
-				<!-- <div
+			<div class="mt-3 flex items-center justify-center gap-2 md:hidden">
+				<div>3D</div>
+				<div
+					class={`flex aspect-[3/2] h-8 rounded-full border p-1 ${img ? 'justify-end' : ''}`}
 					on:click={() => {
 						img = !img;
 					}}
-					class={`relative flex aspect-[5/3] h-8 items-end ${img ? 'justify-end' : ''} rounded-full border p-1`}
 				>
-					<div class="aspect-square h-full rounded-full bg-white"></div>
-				</div> -->
-				<input type="range" bind:value={opacity} min="0" max="100" />
+					<div class="flex aspect-square h-full rounded-full bg-white"></div>
+				</div>
+				<div>Image</div>
 			</div>
 		</div>
 		<div

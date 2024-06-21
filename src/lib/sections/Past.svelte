@@ -76,15 +76,15 @@
 	</Description>
 
 	<div
-		class="absolute bottom-0 z-0 h-full w-full overflow-hidden xl:h-[100svh] xl:w-[calc(100vw_-_2.6rem)]"
+		class="absolute bottom-0 z-0 h-full w-full overflow-hidden lg:h-[100svh] xl:w-[calc(100vw_-_2.6rem)]"
 	>
-		<div class="relative h-full">
+		<div class="relative flex h-[150svh] md:h-full">
 			{#key $mvtSet}
 				<Carousel set={mvtSet} />
 			{/key}
-			<div class="absolute bottom-0 m-4 flex w-full justify-center">
-				<p class="max-w-xs text-center">Select the pose of interest and see its 3D recording</p>
-			</div>
+		</div>
+		<div class="absolute bottom-0 m-4 flex w-full justify-center">
+			<p class="max-w-xs text-center">Select the pose of interest and see its 3D recording</p>
 		</div>
 	</div>
 </div>

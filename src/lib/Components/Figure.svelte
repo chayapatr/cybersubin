@@ -14,8 +14,8 @@
 		const scene = new THREE.Scene();
 		const canvasRect = canvas.getBoundingClientRect();
 
-		camera = new THREE.PerspectiveCamera(80, canvasRect.width / canvasRect.height, 0.1, 1000);
-		camera.position.set(0, 100, 200);
+		camera = new THREE.PerspectiveCamera(60, canvasRect.width / canvasRect.height, 0.1, 1000);
+		camera.position.set(0, 50, 200);
 
 		const renderer = new THREE.WebGLRenderer();
 
@@ -58,14 +58,13 @@
 			if (mixer) mixer.update(1 / 30);
 			scene.children.forEach((child) => {
 				if (child.type === 'Group') {
-					// const index = child.children.length - 1;
+					const index = child.children.length - 1;
 					// if (child.children[index].children.length === 2) {
-					// 	child.children[index].children[1].position.set(0, 0, 0);
+					// 	child.children[index].children[1].position.set(0, i < 5 ? -20 : 0, 0);
 					// }
-					/* sample */
-					child.children[0].children[0].position.set(0, 0, 0);
+
+					child.children[0].children[0].position.set(0, -20, 0);
 					child.children[0];
-					/* sample */
 				}
 			});
 			renderer.render(scene, camera);

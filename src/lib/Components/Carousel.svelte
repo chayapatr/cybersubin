@@ -137,7 +137,7 @@
 
 <div
 	bind:this={carousel}
-	class={`flex h-screen w-screen items-center justify-center overflow-hidden ${$set !== 0 ? 'xl:scale-125' : ''}`}
+	class={`flex h-full w-screen items-center justify-center overflow-hidden ${$set !== 0 ? 'xl:scale-125' : ''}`}
 >
 	<div id="drag-container">
 		<div

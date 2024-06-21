@@ -24,6 +24,7 @@
 		if (i !== 59) $current = i + 1; // `Dance ${i + 1} ${danceName[(i % danceName.length) - 1]}`.toUpperCase();
 	}}
 	on:click={() => {
+		$current = i + 1;
 		$openDialog = true;
 	}}
 >

@@ -23,7 +23,7 @@ html {
 body {
 	font-family: 'mono', monospace;
 	overflow-x: hidden;
-	/* background-color: black; */
+	background-color: black;
 }
 
 .glass {
