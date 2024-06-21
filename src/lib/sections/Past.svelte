@@ -29,8 +29,13 @@
 			</div>
 		</div>
 		<div class="bottom-0 hidden flex-col gap-4 p-6 pt-0 md:absolute md:flex xl:hidden">
-			<button class="btn">Thai Traiditional Dance</button>
-			<button class="btn">History of Mae Bot Yai</button>
+			<a href="https://disco.teak.fi/asia/thai-classical-dance/" class="btn"
+				>Thai Traiditional Dance</a
+			>
+			<a
+				href="https://www.google.com/books/edition/Lives_in_Motion/DKLfEAAAQBAJ?hl=en&gbpv=1&dq=Mae+Bot+Yai&pg=PT61&printsec=frontcover"
+				class="btn">History of Mae Bot Yai</a
+			>
 		</div>
 	</div>
 	<div class="bottom-0 flex flex-col gap-4 p-6 pt-0 md:absolute md:hidden lg:px-8 xl:flex">
@@ -55,26 +60,18 @@
 				on:click={() => {
 					$mvtSet = 0;
 				}}
-				class="btn">All</button
+				class={`mvt-btn ${$mvtSet === 0 ? 'bg-white font-bold text-black' : ''}`}>All</button
 			>
-			<button
-				on:click={() => {
-					$mvtSet = 1;
-				}}
-				class="btn"><span class="hidden xl:inline-block">Movement</span> 1-20</button
-			>
-			<button
-				on:click={() => {
-					$mvtSet = 2;
-				}}
-				class="btn"><span class="hidden xl:inline-block">Movement</span> 21-40</button
-			>
-			<button
-				on:click={() => {
-					$mvtSet = 3;
-				}}
-				class="btn"><span class="hidden xl:inline-block">Movement</span> 41-59</button
-			>
+			{#each [1, 2, 3] as i}
+				<button
+					on:click={() => {
+						$mvtSet = i;
+					}}
+					class={`mvt-btn ${$mvtSet === i ? 'bg-white font-bold text-black' : ''}`}
+					><span class="hidden xl:inline-block">Movement</span>
+					{(i - 1) * 20 + 1}-{Math.min(i * 20, 59)}</button
+				>
+			{/each}
 		</div>
 	</Description>
 
@@ -82,7 +79,7 @@
 		class="absolute bottom-0 z-0 h-full w-full overflow-hidden xl:h-[100svh] xl:w-[calc(100vw_-_2.6rem)]"
 	>
 		<div class="relative h-full">
-			{#key $mvtSet === 0}
+			{#key $mvtSet}
 				<Carousel set={mvtSet} />
 			{/key}
 			<div class="absolute bottom-0 m-4 flex w-full justify-center">
@@ -126,8 +123,13 @@
 					with computational manifestations of ancestral choreographic knowledge, acknowledging
 					non-Western knowledge systems often overlooked in colonial understandings of AI.
 				</p>
-				<button class="rounded-full border border-white px-3 py-1">Learn More</button>
 			</div>
 		</div>
 	</div>
 </div>
+
+<style>
+	.mvt-btn {
+		@apply rounded-full border border-white px-4 py-1 text-center hover:cursor-pointer  hover:bg-gold hover:font-bold hover:text-white;
+	}
+</style>

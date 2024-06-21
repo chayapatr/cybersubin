@@ -33,7 +33,6 @@
 					with computational manifestations of ancestral choreographic knowledge, acknowledging
 					non-Western knowledge systems often overlooked in colonial understandings of AI.
 				</p>
-				<button class="rounded-full border border-white px-3 py-1">Learn More</button>
 			</div>
 		</div>
 	</div>
