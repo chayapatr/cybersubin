@@ -4,12 +4,13 @@
 	import Present2 from '$lib/sections/Present2.svelte';
 	import Future from '$lib/sections/Future.svelte';
 	import About from '$lib/sections/About.svelte';
-
-	import Title from '$lib/Components/Title.svelte';
+	import Dialog from '$lib/Components/Dialog.svelte';
 
 	import { onMount } from 'svelte';
+	import { openDialog } from '$lib/store';
 
 	let current = '';
+
 	onMount(() => {
 		let observer = new IntersectionObserver((entries) => {
 			entries.forEach((entry) => {
@@ -27,6 +28,12 @@
 		});
 	});
 </script>
+
+{#if $openDialog}
+	<div class="fixed left-0 top-0 z-[100] h-[100svh] w-screen">
+		<Dialog />
+	</div>
+{/if}
 
 <div class="flex h-[100svh] flex-col bg-black text-white">
 	<nav class="w-full border-b border-y-white text-center font-bold">
@@ -182,3 +189,9 @@
 		</ul>
 	</nav>
 </div>
+
+<style>
+	#scroll {
+		scroll-snap-type: y mandatory;
+	}
+</style>

@@ -7,6 +7,8 @@
 
 	export let set;
 
+	let carousel;
+
 	let radius = $set === 0 ? 800 : 300; // how big of the radius
 	// let n = $set === 0 ? 59 : $set === 2 ? 19 : 20;
 
@@ -75,10 +77,9 @@
 			desX = 0,
 			desY = 0,
 			tX = 0,
-			tY = 30;
+			tY = 25;
 
-		// setup events
-		document.onpointerdown = function (e) {
+		carousel.onpointerdown = function (e) {
 			clearInterval(odrag.timer);
 			e = e || window.event;
 			var sX = e.clientX,
@@ -135,6 +136,7 @@
 </script>
 
 <div
+	bind:this={carousel}
 	class={`flex h-screen w-screen items-center justify-center overflow-hidden ${$set !== 0 ? 'xl:scale-125' : ''}`}
 >
 	<div id="drag-container">
@@ -150,7 +152,7 @@
 		<div id="ground"></div>
 		<div class="z-50" id="text">
 			<p>
-				{$current}
+				DANCE {$current} FLYING DINOSAUR
 			</p>
 		</div>
 	</div>

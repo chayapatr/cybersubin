@@ -1,5 +1,5 @@
 <script>
-	import { code, current } from '../store';
+	import { code, current, openDialog } from '../store';
 
 	export let i;
 
@@ -21,8 +21,10 @@
 	class={`${i !== 59 ? 'card border border-neutral-500 bg-neutral-800/30 opacity-50 ' : 'card-none'}`}
 	disabled={i === 59}
 	on:mouseenter={() => {
-		if (i !== 59)
-			$current = `Dance ${i + 1} ${danceName[(i % danceName.length) - 1]}`.toUpperCase();
+		if (i !== 59) $current = i + 1; // `Dance ${i + 1} ${danceName[(i % danceName.length) - 1]}`.toUpperCase();
+	}}
+	on:click={() => {
+		$openDialog = true;
 	}}
 >
 	<!-- {#if $code}
