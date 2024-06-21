@@ -56,7 +56,7 @@
 			if (mixer) mixer.update(1 / 30);
 			scene.children.forEach((child) => {
 				if (child.type === 'Group') {
-					console.log(child);
+					// console.log(child);
 					const index = child.children.length - 1;
 					if (child.children[index].children.length === 2) {
 						child.children[index].children[1].position.set(0, 0, 0);
