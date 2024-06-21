@@ -58,11 +58,14 @@
 			if (mixer) mixer.update(1 / 30);
 			scene.children.forEach((child) => {
 				if (child.type === 'Group') {
-					// console.log(child);
-					const index = child.children.length - 1;
-					if (child.children[index].children.length === 2) {
-						child.children[index].children[1].position.set(0, 0, 0);
-					}
+					// const index = child.children.length - 1;
+					// if (child.children[index].children.length === 2) {
+					// 	child.children[index].children[1].position.set(0, 0, 0);
+					// }
+					/* sample */
+					console.log(child.children[0].children[0].position.set(0, 0, 0));
+					child.children[0];
+					/* sample */
 				}
 			});
 			renderer.render(scene, camera);
@@ -74,7 +77,7 @@
 
 		loadModel = (i) => {
 			loader.load(
-				`/subin45.glb`,
+				`/sample.glb`,
 				function (gltf) {
 					for (let i = 0; i < scene.children.length; i++) {
 						if (scene.children[i].type === 'Group') scene.remove(scene.children[i]);
