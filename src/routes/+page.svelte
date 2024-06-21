@@ -127,7 +127,7 @@
 
 <div class="relative" id="scroll">
 	<div
-		class="sticky left-0 top-[100%] z-50 -mb-10 mt-[100dvh] hidden w-[100dvh] -rotate-90 border-b border-b-white bg-neutral-800 font-bold text-white xl:block"
+		class="sticky left-0 top-[100%] z-50 -mb-10 mt-[100dvh] hidden w-[100dvh] -rotate-90 border-b border-b-white bg-neutral-800 font-bold text-white md:block"
 		style="transform-origin: top left;"
 	>
 		<div class="divide-x-white grid w-full grid-cols-4 divide-x">
@@ -173,7 +173,7 @@
 	</div>
 
 	<nav
-		class="sticky bottom-0 z-50 w-full border-t border-y-white bg-black text-center font-bold text-white xl:hidden"
+		class="sticky bottom-0 z-50 w-full border-t border-y-white bg-black text-center font-bold text-white md:hidden"
 	>
 		<ul class="divide-x-white grid w-full grid-cols-4 divide-x [&>li]:p-2">
 			<li class={`hover:cursor-pointer  ${current === 'past' ? 'bg-gold' : ''}`}>

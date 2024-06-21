@@ -6,7 +6,7 @@
 </script>
 
 <div
-	class="relative grid grid-cols-1 bg-black text-white md:mt-[calc(-100svh_-_2.6rem)] xl:ml-10 xl:grid-cols-3"
+	class="relative grid grid-cols-1 bg-black text-white md:ml-10 md:mt-[calc(-100svh_-_2.6rem)] xl:grid-cols-3"
 >
 	<div class="space-y-8 p-6 lg:px-8">
 		<Title head="The Past" title="Mae Bot Yai" color="text-gold" />
@@ -45,7 +45,7 @@
 </div>
 
 <div
-	class="relative flex h-[120svh] flex-col overflow-hidden bg-gradient-to-b from-black to-neutral-800 text-white md:h-[90svh] lg:h-[100svh] xl:ml-10 xl:h-[110svh]"
+	class="relative flex h-[120svh] flex-col overflow-hidden bg-gradient-to-b from-black to-neutral-800 text-white md:ml-10 md:h-[90svh] lg:h-[100svh] xl:h-[110svh]"
 >
 	<Description
 		textColor="text-gold"
@@ -90,7 +90,7 @@
 </div>
 
 <div
-	class="grid grid-cols-1 bg-gradient-to-b from-neutral-800 to-black pb-12 pt-16 md:grid-cols-3 lg:min-h-[100svh] xl:ml-10"
+	class="grid grid-cols-1 bg-gradient-to-b from-neutral-800 to-black pb-12 pt-16 md:ml-10 md:grid-cols-3 lg:min-h-[100svh]"
 	id="past-end"
 >
 	<div class="flex flex-col gap-4 px-6 md:gap-16 lg:px-8">
