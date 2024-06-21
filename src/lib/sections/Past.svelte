@@ -6,7 +6,7 @@
 </script>
 
 <div
-	class="relative grid grid-cols-1 bg-black text-white md:mt-[calc(-100svh_-_2.6rem)] xl:ml-10 xl:grid-cols-3"
+	class="relative grid grid-cols-1 bg-black text-white md:mt-[calc(-100dvh_-_2.6rem)] xl:ml-10 xl:grid-cols-3"
 >
 	<div class="space-y-8 p-6 lg:px-8">
 		<Title head="The Past" title="Mae Bot Yai" color="text-gold" />
@@ -45,7 +45,7 @@
 </div>
 
 <div
-	class="relative flex h-[120svh] flex-col overflow-hidden bg-gradient-to-b from-black to-neutral-800 text-white md:h-[90svh] lg:h-[100svh] xl:ml-10 xl:h-[110svh]"
+	class="relative flex h-[120dvh] flex-col overflow-hidden bg-gradient-to-b from-black to-neutral-800 text-white md:h-[90dvh] lg:h-[100dvh] xl:ml-10 xl:h-[110dvh]"
 >
 	<Description
 		textColor="text-gold"
@@ -76,9 +76,9 @@
 	</Description>
 
 	<div
-		class="absolute bottom-0 z-0 h-full w-full overflow-hidden lg:h-[100svh] xl:w-[calc(100vw_-_2.6rem)]"
+		class="absolute bottom-0 z-0 h-full w-full overflow-hidden lg:h-[100dvh] xl:w-[calc(100vw_-_2.6rem)]"
 	>
-		<div class="relative flex h-[150svh] md:h-full">
+		<div class="relative flex h-[150dvh] md:h-full">
 			{#key $mvtSet}
 				<Carousel set={mvtSet} />
 			{/key}
@@ -90,7 +90,7 @@
 </div>
 
 <div
-	class="grid grid-cols-1 bg-gradient-to-b from-neutral-800 to-black pb-12 pt-16 md:grid-cols-3 lg:min-h-[100svh] xl:ml-10"
+	class="grid grid-cols-1 bg-gradient-to-b from-neutral-800 to-black pb-12 pt-16 md:grid-cols-3 lg:min-h-[100dvh] xl:ml-10"
 	id="past-end"
 >
 	<div class="flex flex-col gap-4 px-6 md:gap-16 lg:px-8">

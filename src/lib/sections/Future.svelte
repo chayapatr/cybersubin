@@ -2,7 +2,7 @@
 	import Title from '$lib/Components/Title.svelte';
 </script>
 
-<div class="relative flex min-h-[80svh] overflow-hidden text-white lg:min-h-[100svh] xl:ml-10">
+<div class="relative flex min-h-[80dvh] overflow-hidden text-white lg:min-h-[100dvh] xl:ml-10">
 	<div class="z-50 grid md:grid-cols-3">
 		<div class="p-8">
 			<Title head="The Future" title="Cyber Subin" color="text-red" />
@@ -34,13 +34,13 @@
 			</div>
 		</div>
 	</div>
-	<div class="absolute left-0 top-0 z-0 h-[110svh] w-full overflow-hidden">
+	<div class="absolute left-0 top-0 z-0 h-[110dvh] w-full overflow-hidden">
 		<img src="/cybersubin.png" class="min-h-full object-cover opacity-50 lg:opacity-100" alt="" />
 	</div>
 </div>
 
 <div
-	class="grid grid-cols-1 bg-neutral-800 pb-12 pt-16 md:grid-cols-3 lg:min-h-[100svh] xl:ml-10"
+	class="grid grid-cols-1 bg-neutral-800 pb-12 pt-16 md:grid-cols-3 lg:min-h-[100dvh] xl:ml-10"
 	id="past-end"
 >
 	<div class="flex flex-col gap-4 px-6 md:gap-16 lg:px-8">

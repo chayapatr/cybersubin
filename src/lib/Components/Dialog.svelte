@@ -9,7 +9,7 @@
 <!-- svelte-ignore a11y-no-static-element-interactions -->
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <div
-	class="fixed left-0 top-0 z-[120] flex h-[100svh] w-screen items-center justify-center bg-black/80 p-4"
+	class="fixed left-0 top-0 z-[120] flex h-[100dvh] w-screen items-center justify-center bg-black/80 p-4"
 >
 	<div
 		class="glass relative grid max-h-full max-w-4xl gap-4 rounded-md border border-neutral-800 bg-neutral-900 p-4 text-white shadow-md lg:h-auto lg:flex-row"

@@ -30,12 +30,12 @@
 </script>
 
 {#if $openDialog}
-	<div class="fixed left-0 top-0 z-[100] h-[100svh] w-screen">
+	<div class="fixed left-0 top-0 z-[100] h-[100dvh] w-screen">
 		<Dialog />
 	</div>
 {/if}
 
-<div class="flex h-[100svh] flex-col bg-black text-white">
+<div class="flex h-[100dvh] flex-col bg-black text-white">
 	<nav class="w-full border-b border-y-white text-center font-bold">
 		<div class="divide-x-white z-50 grid w-full grid-cols-4 divide-x [&>a]:p-2">
 			<a href="#past" class="hover:cursor-pointer hover:bg-gold">Past</a>
@@ -127,7 +127,7 @@
 
 <div class="relative" id="scroll">
 	<div
-		class="sticky left-0 top-[100%] z-50 -mb-10 mt-[100svh] hidden w-[100svh] -rotate-90 border-b border-b-white bg-neutral-800 font-bold text-white xl:block"
+		class="sticky left-0 top-[100%] z-50 -mb-10 mt-[100dvh] hidden w-[100dvh] -rotate-90 border-b border-b-white bg-neutral-800 font-bold text-white xl:block"
 		style="transform-origin: top left;"
 	>
 		<div class="divide-x-white grid w-full grid-cols-4 divide-x">
