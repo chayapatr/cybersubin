@@ -4,6 +4,7 @@ node_modules
 /.svelte-kit
 /package
 /static/glb
+/static/glb-test
 .env
 .env.*
 !.env.example

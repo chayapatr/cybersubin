@@ -16,49 +16,53 @@
 
 		const renderer = new THREE.WebGLRenderer();
 		const canvasRect = canvas.getBoundingClientRect();
-		console.log(canvasRect);
-		renderer.setSize(canvasRect.width, canvasRect.height);
-		renderer.setPixelRatio(window.devicePixelRatio);
 
-		const geometry = new THREE.BoxGeometry(2, 2, 2);
-		const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
-		const cube = new THREE.Mesh(geometry, material);
-		scene.add(cube);
+		renderer.setSize(canvasRect.width, canvasRect.height);
+		renderer.setPixelRatio(window.devicePixelRatio * 1.5);
+
+		// const geometry = new THREE.BoxGeometry(2, 2, 2);
+		// const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
+		// const cube = new THREE.Mesh(geometry, material);
+		// scene.add(cube);
 
 		canvas.appendChild(renderer.domElement);
 
-		/* thest controls */
-
 		controls = new OrbitControls(camera, renderer.domElement);
-		controls.listenToKeyEvents(window); // optional
+
+		controls.enablePan = false;
+		controls.enableZoom = false;
+		// controls.maxDistance = 300;
+		// controls.minDistance = 150;
 
 		controls.enableDamping = true; // an animation loop is required when either damping or auto-rotation are enabled
 		controls.dampingFactor = 0.05;
 
 		controls.screenSpacePanning = false;
 
-		// controls.minDistance = 100;
-		// controls.maxDistance = 500;
-
-		// controls.maxPolarAngle = Math.PI / 2;
-
-		/* --- */
-
-		const hemiLight = new THREE.HemisphereLight(0xffffff, 0xffffff, 1);
-		hemiLight.position.set(30, 200, 300);
-		scene.add(hemiLight);
-
-		const dirLight = new THREE.DirectionalLight(0xffffff, 1);
-		dirLight.position.set(30, 200, 300);
+		const dirLight = new THREE.DirectionalLight(0xffffff, 2);
+		dirLight.position.set(-30, 200, 300);
 		scene.add(dirLight);
 
-		const dirLight2 = new THREE.DirectionalLight(0xffffff, 1);
-		dirLight.position.set(-30, 200, 300);
+		const dirLight2 = new THREE.DirectionalLight(0xffffff, 2);
+		dirLight2.position.set(-30, 200, 300);
 		scene.add(dirLight2);
+
+		const dirLight3 = new THREE.DirectionalLight(0xffffff, 2);
+		dirLight3.position.set(0, 200, -300);
+		scene.add(dirLight3);
 
 		function animate() {
 			requestAnimationFrame(animate);
 			if (mixer) mixer.update(1 / 30);
+			scene.children.forEach((child) => {
+				if (child.type === 'Group') {
+					console.log(child);
+					const index = child.children.length - 1;
+					if (child.children[index].children.length === 2) {
+						child.children[index].children[1].position.set(0, 0, 0);
+					}
+				}
+			});
 			renderer.render(scene, camera);
 		}
 
