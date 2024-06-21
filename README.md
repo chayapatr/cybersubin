@@ -16,15 +16,18 @@ Evolving Culture Heritage through Techonology
 
 - [x] Add Images
 - [x] Carousel Functionality
-- [ ] Fix generate 59
-- [ ] 3D Character Page
+- [x] Fix generate 59
+- [x] 3D character page
+- [ ] Loading State for 3d Model
+- [ ] 3d keyframe slider
 
 ### The Present
 
 - [x] Add Images
 - [x] 59x Six Elements Image
 - [x] Merge Animation
-- [ ] Six Element Explorer
+- [ ] DIagram Line
+- [ ] Six Element dialog
 
 ### The Future
 
