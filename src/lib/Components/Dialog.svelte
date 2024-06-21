@@ -19,7 +19,7 @@
 		</h3>
 		<div class="w-full gap-2 overflow-hidden md:flex md:flex-row">
 			<div
-				class="relative aspect-[3/4] max-h-full w-full overflow-hidden rounded-md border border-neutral-700 bg-black"
+				class="relative aspect-[3/4] max-h-full w-full overflow-hidden rounded-md border border-neutral-700 bg-black hover:cursor-grab"
 			>
 				<Figure i={+$current} />
 				{#if img}
