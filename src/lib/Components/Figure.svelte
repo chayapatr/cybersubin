@@ -63,7 +63,7 @@
 					// 	child.children[index].children[1].position.set(0, 0, 0);
 					// }
 					/* sample */
-					console.log(child.children[0].children[0].position.set(0, 0, 0));
+					child.children[0].children[0].position.set(0, 0, 0);
 					child.children[0];
 					/* sample */
 				}
