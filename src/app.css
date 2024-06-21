@@ -33,10 +33,10 @@ body {
 }
 
 .hero {
-	@apply flex flex-col bg-black text-white xl:min-h-[100dvh];
+	@apply flex flex-col bg-black text-white xl:min-h-[100svh];
 }
 .hero-no-bg {
-	@apply flex flex-col text-white md:h-[100dvh];
+	@apply flex flex-col text-white md:h-[100svh];
 }
 .btn {
 	@apply rounded-full border border-white px-4 py-1 text-center hover:cursor-pointer hover:bg-white hover:font-bold hover:text-black;
