@@ -1,6 +1,6 @@
 <script>
 	// @ts-nocheck
-	import { onMount } from 'svelte';
+	import { onMount, onDestroy } from 'svelte';
 	import * as THREE from 'three';
 	import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 	import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
@@ -9,9 +9,10 @@
 	export let i = 1;
 	export let seek = undefined;
 
-	let clock, mixer, controls, canvas, camera, clip, timer;
+	let clock, mixer, controls, canvas, camera, clip;
 	let loadModel = (i) => {};
 	let seekAnimationTime = () => {};
+	let stop = false;
 
 	onMount(() => {
 		const scene = new THREE.Scene();
@@ -57,9 +58,8 @@
 		scene.add(dirLight3);
 
 		function animate() {
+			if (stop) return;
 			requestAnimationFrame(animate);
-			// if (mixer) mixer.update(1 / 30);
-			// console.log(clock.getDelta());
 			if (mixer) {
 				const time = clip?.[0].duration;
 				const speed = 4;
@@ -84,10 +84,9 @@
 
 		const loader = new GLTFLoader();
 
-		clock = new THREE.Clock();
-		timer = new THREE.Clock();
-
 		loadModel = (i) => {
+			clock = new THREE.Clock();
+
 			loader.load(
 				`/sample.glb`,
 				function (gltf) {
@@ -117,6 +116,7 @@
 		animate();
 
 		seekAnimationTime = (animMixer, percentage) => {
+			// console.log(percentage);
 			const time = clip?.[0].duration;
 			if (time) {
 				animMixer.time = 0;
@@ -126,6 +126,13 @@
 				animMixer.update((time * percentage) / 100);
 			}
 		};
+	});
+
+	onDestroy(() => {
+		// $slider = 0;
+		// controls.dispose();
+		// clock = null;
+		stop = true;
 	});
 
 	$: loadModel(i);
