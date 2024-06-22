@@ -4,11 +4,14 @@
 	import * as THREE from 'three';
 	import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 	import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+	import { slider } from '$lib/store';
 
 	export let i = 1;
+	export let seek = undefined;
 
-	let clock, mixer, controls, canvas, camera;
+	let clock, mixer, controls, canvas, camera, clip, timer;
 	let loadModel = (i) => {};
+	let seekAnimationTime = () => {};
 
 	onMount(() => {
 		const scene = new THREE.Scene();
@@ -55,16 +58,25 @@
 
 		function animate() {
 			requestAnimationFrame(animate);
-			if (mixer) mixer.update(1 / 30);
+			// if (mixer) mixer.update(1 / 30);
+			// console.log(clock.getDelta());
+			if (mixer) {
+				const time = clip?.[0].duration;
+				const speed = 4;
+				$slider = ($slider + (clock.getDelta() / (time / speed)) * 100) % 100;
+				// console.log($slider);
+				mixer.update(clock.getDelta() * speed);
+			}
+
 			scene.children.forEach((child) => {
 				if (child.type === 'Group') {
 					const index = child.children.length - 1;
-					// if (child.children[index].children.length === 2) {
-					// 	child.children[index].children[1].position.set(0, i < 5 ? -20 : 0, 0);
-					// }
+					if (child.children[index].children.length === 2) {
+						child.children[index].children[1].position.set(0, i < 5 ? -20 : 0, 0);
+					}
 
-					child.children[0].children[0].position.set(0, -20, 0);
-					child.children[0];
+					// child.children[0].children[0].position.set(0, -20, 0);
+					// child.children[0];
 				}
 			});
 			renderer.render(scene, camera);
@@ -73,10 +85,11 @@
 		const loader = new GLTFLoader();
 
 		clock = new THREE.Clock();
+		timer = new THREE.Clock();
 
 		loadModel = (i) => {
 			loader.load(
-				`/sample.glb`,
+				`/glb/subin10.glb`,
 				function (gltf) {
 					for (let i = 0; i < scene.children.length; i++) {
 						if (scene.children[i].type === 'Group') scene.remove(scene.children[i]);
@@ -86,9 +99,12 @@
 
 					if (gltf.animations.length > 0) {
 						mixer = new THREE.AnimationMixer(gltf.scene);
+						clip = gltf.animations;
 						// gltf.animations.forEach((clip) => {
-						// 	mixer.clipAction(clip).loop = THREE.LoopRepeat;
+						// let animation = mixer.clipAction(gltf.animations[0]);
+						// animation.setLoop(THREE.LoopOnce);
 						// });
+						$slider = 0;
 						mixer.clipAction(gltf.animations[0]).play();
 					}
 				},
@@ -99,9 +115,21 @@
 			);
 		};
 		animate();
+
+		seekAnimationTime = (animMixer, percentage) => {
+			const time = clip?.[0].duration;
+			if (time) {
+				animMixer.time = 0;
+				for (var i = 0; i < animMixer._actions.length; i++) {
+					animMixer._actions[i].time = 0;
+				}
+				animMixer.update((time * percentage) / 100);
+			}
+		};
 	});
 
 	$: loadModel(i);
+	$: seek && seekAnimationTime(mixer, seek);
 </script>
 
 <!-- <div class="fixed z-50 flex w-screen justify-center">

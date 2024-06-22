@@ -1,6 +1,6 @@
 <script>
 	import Figure from './Figure.svelte';
-	import { openDialog, current } from '$lib/store';
+	import { openDialog, current, slider } from '$lib/store';
 
 	let img = false;
 	let opacity = 0;
@@ -21,7 +21,18 @@
 			<div
 				class="relative aspect-[3/4] max-h-full w-full overflow-hidden rounded-md border border-neutral-700 bg-black hover:cursor-grab"
 			>
-				<Figure i={+$current} />
+				<Figure i={+$current} seek={$slider} />
+				{#if !img}
+					<div class="absolute bottom-0 left-0 z-50 mb-2 h-8 w-full px-4">
+						<input
+							type="range"
+							name=""
+							bind:value={$slider}
+							class="mb-6 h-1 w-full cursor-pointer appearance-none rounded-lg bg-neutral-500 accent-neutral-200"
+							id=""
+						/>
+					</div>
+				{/if}
 				{#if img}
 					<div class="absolute right-0 top-0 aspect-[3/4] h-full w-full md:hidden">
 						<img
