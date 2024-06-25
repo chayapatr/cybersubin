@@ -40,8 +40,10 @@
 	</div> -->
 	<div class="relative">
 		<!-- <img src="/6-elements-lg.png" alt="" /> -->
-		<img class="" src="/6-elements/body.png" alt="" />
-		<div class="absolute left-0 top-0 z-[100] h-full w-full">
+		<img src="/6-elements/body.png" class="hidden xl:block" alt="" />
+		<img src="/6-elements.png" class="block p-12 lg:w-[30vw] xl:hidden" alt="" />
+
+		<div class="absolute left-0 top-0 z-[100] hidden h-full w-full xl:block">
 			{#each ['axis', 'relation', 'limb', 'circle', 'space', 'energy'] as x}
 				<img
 					style={`opacity: ${current === x || !current ? '100' : '10'}%`}
@@ -50,15 +52,11 @@
 					alt=""
 				/>
 			{/each}
-			<img
-				class="absolute left-0 top-0 hidden h-full w-full lg:block"
-				src="/6-elements/line.png"
-				alt=""
-			/>
+			<img class="absolute left-0 top-0 h-full w-full" src="/6-elements/line.png" alt="" />
 		</div>
-		<div class="absolute left-0 top-0 z-[150] hidden h-full w-full lg:block">
+		<div class="absolute left-0 top-0 z-[150] hidden h-full w-full xl:block">
 			<div class="relative h-full w-full">
-				{#each [['axis', 'Axis Point', 'top-[-6%] left-[7%]'], ['relation', 'Shifting Relations', '-top-[6%] left-[67%]'], ['limb', 'Synchronic Limbs', 'top-[32%] left-[0%]'], ['circle', 'Circle & Curves', 'top-[85%] left-[5%]'], ['space', 'External Body Space', 'top-[85%] left-[76%]'], ['energy', 'Energy', 'top-[59%] left-[75%]']] as x}
+				{#each [['axis', 'Axis Points', 'top-[-6%] left-[7%]'], ['relation', 'Shifting Relations', '-top-[6%] left-[67%]'], ['limb', 'Synchronic Limbs', 'top-[32%] left-[0%]'], ['circle', 'Circle & Curves', 'top-[85%] left-[5%]'], ['space', 'External Body Space', 'top-[85%] left-[76%]'], ['energy', 'Energy', 'top-[59%] left-[75%]']] as x}
 					<button
 						on:mouseenter={() => (current = x[0])}
 						on:mouseleave={() => (current = '')}
@@ -79,4 +77,28 @@
 			</div> -->
 		</div>
 	</div>
+	<div class="absolute left-0 top-0 space-y-3 p-6 md:ml-12 lg:hidden">
+		<h3 class="text-3xl text-orange">No. 60</h3>
+		<p class="text-pretty text-white">
+			Six elements were discovered from the analysis of the Mae Bot Yai fundamentals, which aim to
+			empower choreographers and dancers to invent the next movement (the imaginary 60th movement),
+			hence the name "No. 60"
+		</p>
+	</div>
+	<div
+		class="absolute bottom-10 left-0 grid w-full grid-cols-2 gap-3 p-4 pb-6 md:grid-cols-3 md:pl-16 lg:bottom-0 xl:hidden"
+	>
+		<button class="btn w-full text-white">Axis Points</button>
+		<button class="btn w-full text-white">Shifting Relations</button>
+		<button class="btn w-full text-white">Synchronic Limbs</button>
+		<button class="btn w-full text-white">Circle & Curves</button>
+		<button class="btn w-full text-white">External Body Space</button>
+		<button class="btn w-full text-white">Energy</button>
+	</div>
 </div>
+
+<style>
+	.btn {
+		@apply min-h-14 rounded-full border border-white px-4 text-center text-sm hover:cursor-pointer hover:bg-white hover:font-bold hover:text-black;
+	}
+</style>

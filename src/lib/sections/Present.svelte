@@ -71,7 +71,7 @@
 		<div class="relative">
 			<div class="flex min-h-screen w-full flex-col items-center justify-center gap-2 p-2 md:p-8">
 				<div
-					class="relative grid w-full grid-cols-6 gap-1 md:grid-cols-12"
+					class="relative grid max-h-[100vh] w-full grid-cols-6 gap-1 lg:grid-cols-12"
 					bind:this={one}
 					transition:fade
 				>
@@ -109,20 +109,22 @@
 				</div>
 				{#if show}
 					<div class="absolute left-0 top-0 h-[100svh] w-full" transition:fade>
-						<Description
-							textColor="text-orange"
-							text={{
-								left: 'Try it!',
-								right: 'No.60',
-								rightDesc: ''
-							}}
-						>
-							<p class="hidden text-white lg:block">
-								Six elements were discovered from the analysis of the Mae Bot Yai fundamentals,
-								which aim to empower choreographers and dancers to invent the next movement (the
-								imaginary 60th movement, hence the name "No. 60")
-							</p></Description
-						>
+						<div class="hidden lg:block">
+							<Description
+								textColor="text-orange"
+								text={{
+									left: 'Try it!',
+									right: 'No.60',
+									rightDesc: ''
+								}}
+							>
+								<p class="text-white">
+									Six elements were discovered from the analysis of the Mae Bot Yai fundamentals,
+									which aim to empower choreographers and dancers to invent the next movement (the
+									imaginary 60th movement, hence the name "No. 60")
+								</p>
+							</Description>
+						</div>
 						<SixElementsContent />
 					</div>
 				{/if}
