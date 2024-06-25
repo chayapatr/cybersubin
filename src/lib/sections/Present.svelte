@@ -117,7 +117,7 @@
 								rightDesc: ''
 							}}
 						>
-							<p class="text-white">
+							<p class="hidden text-white lg:block">
 								Six elements were discovered from the analysis of the Mae Bot Yai fundamentals,
 								which aim to empower choreographers and dancers to invent the next movement (the
 								imaginary 60th movement, hence the name "No. 60")
