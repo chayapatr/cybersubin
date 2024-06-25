@@ -108,7 +108,7 @@
 					</div>
 				</div>
 				{#if show}
-					<div class="absolute left-0 top-0 h-[100svh] w-full" transition:fade>
+					<div class="absolute left-0 top-0 h-[100lvh] w-full" transition:fade>
 						<SixElementsContent />
 						<div class="absolute hidden lg:block">
 							<Description

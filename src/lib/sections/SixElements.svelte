@@ -42,7 +42,7 @@
 	</div> -->
 	<div class="relative">
 		<img src="/6-elements/body.png" class="hidden xl:block" alt="" />
-		<img src="/6-elements.png" class="block p-12 lg:w-[30vw] xl:hidden" alt="" />
+		<img src="/6-elements.png" class="block scale-90 p-12 lg:w-[30vw] xl:hidden" alt="" />
 
 		<div class="absolute left-0 top-0 z-[100] hidden h-full w-full xl:block">
 			{#each ['axis', 'relation', 'limb', 'circle', 'space', 'energy'] as x}
