@@ -46,7 +46,7 @@
 		</div>
 	</div>
 
-	<div class="absolute left-0 top-0 z-0 h-[100svh] w-screen">
+	<div class="absolute left-0 top-0 z-0 h-[100svh] w-screen overflow-x-hidden">
 		<img
 			src="/hero/left-1.png"
 			style={`transform: translate3d(0px, ${parallax * 0.08}px, 0px)`}
