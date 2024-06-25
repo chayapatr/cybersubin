@@ -14,7 +14,9 @@
 	onMount(() => {});
 </script>
 
-<div class="absolute left-0 top-0 flex h-full w-screen items-center justify-center md:-ml-10">
+<div
+	class="absolute left-0 top-0 flex h-full w-screen items-center justify-center bg-black/40 md:-ml-10"
+>
 	<!-- <div class="relative">
 		<img src="/6-elements.png" class="w-[80vw] md:h-[50vh] md:w-auto" alt="" />
 		<div class="absolute left-0 top-0 h-full w-full" id="asf">
@@ -39,7 +41,6 @@
 		</div>
 	</div> -->
 	<div class="relative">
-		<!-- <img src="/6-elements-lg.png" alt="" /> -->
 		<img src="/6-elements/body.png" class="hidden xl:block" alt="" />
 		<img src="/6-elements.png" class="block p-12 lg:w-[30vw] xl:hidden" alt="" />
 
@@ -54,7 +55,7 @@
 			{/each}
 			<img class="absolute left-0 top-0 h-full w-full" src="/6-elements/line.png" alt="" />
 		</div>
-		<div class="absolute left-0 top-0 z-[150] hidden h-full w-full xl:block">
+		<div class="absolute left-0 top-0 z-[400] hidden h-full w-full xl:block">
 			<div class="relative h-full w-full">
 				{#each [['axis', 'Axis Points', 'top-[-6%] left-[7%]'], ['relation', 'Shifting Relations', '-top-[6%] left-[67%]'], ['limb', 'Synchronic Limbs', 'top-[32%] left-[0%]'], ['circle', 'Circle & Curves', 'top-[85%] left-[5%]'], ['space', 'External Body Space', 'top-[85%] left-[76%]'], ['energy', 'Energy', 'top-[59%] left-[75%]']] as x}
 					<button

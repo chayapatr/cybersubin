@@ -30,17 +30,22 @@
 		</div>
 		<div class="bottom-0 hidden flex-col gap-4 p-6 pt-0 md:absolute md:flex xl:hidden">
 			<a href="https://disco.teak.fi/asia/thai-classical-dance/" class="btn"
-				>Thai Traiditional Dance</a
+				>Thai Traiditional Dance ↗</a
 			>
 			<a
 				href="https://www.google.com/books/edition/Lives_in_Motion/DKLfEAAAQBAJ?hl=en&gbpv=1&dq=Mae+Bot+Yai&pg=PT61&printsec=frontcover"
-				class="btn">History of Mae Bot Yai</a
+				class="btn">History of Mae Bot Yai ↗</a
 			>
 		</div>
 	</div>
 	<div class="bottom-0 flex flex-col gap-4 p-6 pt-0 md:absolute md:hidden lg:px-8 xl:flex">
-		<button class="btn">Thai Traiditional Dance</button>
-		<button class="btn">History of Mae Bot Yai</button>
+		<a href="https://disco.teak.fi/asia/thai-classical-dance/" class="btn"
+			>Thai Traiditional Dance ↗</a
+		>
+		<a
+			href="https://www.google.com/books/edition/Lives_in_Motion/DKLfEAAAQBAJ?hl=en&gbpv=1&dq=Mae+Bot+Yai&pg=PT61&printsec=frontcover"
+			class="btn">History of Mae Bot Yai ↗</a
+		>
 	</div>
 </div>
 

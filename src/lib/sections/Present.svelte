@@ -109,7 +109,8 @@
 				</div>
 				{#if show}
 					<div class="absolute left-0 top-0 h-[100svh] w-full" transition:fade>
-						<div class="hidden lg:block">
+						<SixElementsContent />
+						<div class="absolute hidden lg:block">
 							<Description
 								textColor="text-orange"
 								text={{
@@ -125,7 +126,6 @@
 								</p>
 							</Description>
 						</div>
-						<SixElementsContent />
 					</div>
 				{/if}
 			</div>

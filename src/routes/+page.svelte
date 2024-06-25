@@ -1,4 +1,5 @@
 <script>
+	import Hero from '$lib/sections/Hero.svelte';
 	import Past from '$lib/sections/Past.svelte';
 	import Present from '$lib/sections/Present.svelte';
 	import Present2 from '$lib/sections/Present2.svelte';
@@ -35,42 +36,7 @@
 	</div>
 {/if}
 
-<div class="flex h-[100svh] flex-col bg-black text-white">
-	<nav class="w-full border-b border-y-white text-center font-bold">
-		<div class="divide-x-white z-50 grid w-full grid-cols-4 divide-x [&>a]:p-2">
-			<a href="#past" class="hover:cursor-pointer hover:bg-gold">Past</a>
-			<a href="#present" class="hover:cursor-pointer hover:bg-orange">Present</a>
-			<a href="#future" class="hover:cursor-pointer hover:bg-red">Future</a>
-			<a href="#about" class="hover:cursor-pointer hover:bg-neutral-800">About</a>
-		</div>
-	</nav>
-	<div class="flex h-full flex-col justify-between gap-16 p-6 md:items-center md:justify-center">
-		<div>
-			<div class="mt-12 text-[5rem] font-bold leading-none sm:text-8xl md:mt-0">
-				<h1>Cyber</h1>
-				<h1>Subin</h1>
-			</div>
-			<h4 class="text-4xl">Open Lab</h4>
-		</div>
-		<h5 class="max-w-[12rem] text-base md:max-w-sm md:text-center md:text-xl">
-			Evolving Cultural Heritage through Technology
-		</h5>
-	</div>
-	<div class="absolute bottom-0 right-0 p-4 md:p-6">
-		<div class="divide-x-white flex rounded-full text-lg md:text-xl">
-			<div
-				class="rounded-l-full border border-r-[0.5px] border-white px-3 hover:bg-white hover:text-black"
-			>
-				ก
-			</div>
-			<div
-				class="rounded-r-full border border-l-[0.5px] border-white px-3 hover:bg-white hover:text-black"
-			>
-				a
-			</div>
-		</div>
-	</div>
-</div>
+<Hero />
 
 <div class="hero bg-black text-white">
 	<div class="grid w-full divide-y text-sm md:grid-cols-3 md:gap-y-12 md:divide-y-0 md:text-base">
@@ -119,7 +85,7 @@
 				knowledge systems often overlooked in colonial understandings of AI.
 			</p>
 			<div>
-				<a href="https://cybersubin.media.mit.edu" class="btn">Learn More</a>
+				<a href="https://cybersubin.media.mit.edu" class="btn">Learn More ↗</a>
 			</div>
 		</div>
 	</div>
