@@ -1,4 +1,5 @@
 <script>
+	import { posture } from '$lib/59';
 	import Card from '$lib/Components/Card.svelte';
 	import { current } from '$lib/store';
 	import { onMount } from 'svelte';
@@ -152,7 +153,8 @@
 		<div id="ground"></div>
 		<div class="z-50" id="text">
 			<p>
-				DANCE {$current} FLYING DINOSAUR
+				POSE {$current}
+				{posture[$current - 1].english.toUpperCase()}
 			</p>
 		</div>
 	</div>

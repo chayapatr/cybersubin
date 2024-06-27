@@ -2,19 +2,6 @@
 	import { code, current, openDialog } from '../store';
 
 	export let i;
-
-	let danceName = [
-		'Flying Dinosaur',
-		'Cyclist',
-		'Dancing Robot',
-		'Dragon Fire',
-		'Flying Fish',
-		'Horse',
-		'Emperor Penguin',
-		'Enormous Elephant',
-		'Rainbow Frog',
-		'Dancing Monkey'
-	];
 </script>
 
 <button
