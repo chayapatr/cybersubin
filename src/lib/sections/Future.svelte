@@ -46,7 +46,7 @@
 		title="cybersubin"
 		frameborder="0"
 	></iframe>
-	<div class="absolute right-0 top-0 p-6">
+	<div class="absolute right-0 top-0 p-3 md:p-6">
 		<h2 class={`text-3xl font-bold text-red md:w-min md:text-6xl`}>Try it!</h2>
 	</div>
 </div>
