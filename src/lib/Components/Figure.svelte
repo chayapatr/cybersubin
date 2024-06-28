@@ -14,6 +14,8 @@
 	let seekAnimationTime = () => {};
 	let stop = false;
 
+	let loading = true;
+
 	onMount(() => {
 		const scene = new THREE.Scene();
 		const canvasRect = canvas.getBoundingClientRect();
@@ -93,6 +95,7 @@
 					for (let i = 0; i < scene.children.length; i++) {
 						if (scene.children[i].type === 'Group') scene.remove(scene.children[i]);
 					}
+					loading = false;
 					scene.add(gltf.scene);
 					renderer.render(scene, camera);
 
@@ -148,3 +151,30 @@
 </div> -->
 
 <div bind:this={canvas} class="h-full w-full"></div>
+{#if loading}
+	<div class="absolute left-0 top-0 flex h-full w-full items-center justify-center bg-black">
+		<span class="loader"></span>
+	</div>
+{/if}
+
+<style>
+	.loader {
+		width: 48px;
+		height: 48px;
+		border-radius: 50%;
+		display: inline-block;
+		border-top: 3px solid #fff;
+		border-right: 3px solid transparent;
+		box-sizing: border-box;
+		animation: rotation 1s linear infinite;
+	}
+
+	@keyframes rotation {
+		0% {
+			transform: rotate(0deg);
+		}
+		100% {
+			transform: rotate(360deg);
+		}
+	}
+</style>
