@@ -13,7 +13,7 @@
 	class="fixed left-0 top-0 z-[120] flex h-[100dvh] w-screen items-center justify-center bg-black/80 p-4"
 >
 	<div
-		class="glass relative grid max-h-full min-w-[50%] max-w-4xl gap-4 rounded-md border border-neutral-800 bg-neutral-900 p-4 text-white shadow-md lg:h-auto lg:flex-row"
+		class="glass relative grid max-h-full w-full min-w-[50%] max-w-4xl gap-4 rounded-md border border-neutral-800 bg-neutral-900 p-4 text-white shadow-md lg:h-auto lg:flex-row"
 	>
 		<h3 class="w-full text-wrap pr-10 text-xl">
 			<span class="font-bold text-gold">Pose {$current}</span> · {posture[$current - 1].english}
