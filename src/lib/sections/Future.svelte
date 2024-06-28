@@ -21,7 +21,7 @@
 				choreographer, and even the audience to participate in altering the choreography of the
 				virtual agents by adjusting parameters that represent traditional Thai dance elements.
 			</p>
-			<a href="https://opencyberdance.pages.dev" class="btn inline-block">Let's Experiment</a>
+			<!-- <a href="https://opencyberdance.pages.dev" class="btn inline-block">Let's Experiment</a> -->
 		</div>
 	</div>
 	<div class="bg-red-500 absolute bottom-0 left-0 z-50 w-full p-6 text-4xl text-white">
@@ -36,6 +36,18 @@
 	</div>
 	<div class="absolute left-0 top-0 z-0 h-[110svh] w-full overflow-hidden">
 		<img src="/cybersubin.png" class="min-h-full object-cover opacity-50 lg:opacity-100" alt="" />
+	</div>
+</div>
+
+<div class="relative h-[100svh] w-full md:pl-10">
+	<iframe
+		class="h-full w-full"
+		src="https://opencyberdance.pages.dev/"
+		title="cybersubin"
+		frameborder="0"
+	></iframe>
+	<div class="absolute right-0 top-0 p-6">
+		<h2 class={`text-3xl font-bold text-red md:w-min md:text-6xl`}>Try it!</h2>
 	</div>
 </div>
 
