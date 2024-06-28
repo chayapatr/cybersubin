@@ -46,7 +46,7 @@ export const posture: { thai: string; english: string; pronounce: string }[] = [
 	},
 	{
 		thai: 'ช้างสบัดหญ้า',
-		english: 'An Elephant Shaking Grasses Off Its Body',
+		english: 'An Elephant Shaking Grasses',
 		pronounce: 'Chang-sa-bad-nha'
 	},
 	{ thai: 'ขี่ม้าตีคลี', english: 'Playing Horseback Polo', pronounce: 'Kee-ma-tee-klee' },
@@ -60,7 +60,7 @@ export const posture: { thai: string; english: string; pronounce: string }[] = [
 		english: ' The Aureole of the Sumeru Mountain',
 		pronounce: 'Glod-pra-su-main'
 	},
-	{ thai: 'ตระเวนเวหา', english: 'Flying in the Sky', pronounce: 'Tra-wain-way-ha' },
+	{ thai: 'ตระเวนเวหา', english: 'Flying through the Sky', pronounce: 'Tra-wain-way-ha' },
 	{
 		thai: 'นาคาม้วนหาง',
 		english: 'Naga Rolling Its Tail',
@@ -75,7 +75,7 @@ export const posture: { thai: string; english: string; pronounce: string }[] = [
 	{ thai: 'ชักแป้งผัดหน้า', english: 'Powdering the Face', pronounce: 'Chak-pang-pad-na' },
 	{
 		thai: 'เหราเล่นน้ำ',
-		english: 'Hera Playing in Water',
+		english: 'A Hera Playing in Water',
 		pronounce: 'He-ra-len-nam'
 	},
 	{
@@ -96,7 +96,7 @@ export const posture: { thai: string; english: string; pronounce: string }[] = [
 		english: 'A Fish Swimming in a River',
 		pronounce: 'Mad-cha-chom-sa-korn'
 	},
-	{ thai: 'กินนรฟ้อนโอ้', english: 'A Bird-Man Dancing', pronounce: 'Kin-norn-forn-oh' },
+	{ thai: 'กินนรฟ้อนโอ้', english: 'A Kinnorn Dancing', pronounce: 'Kin-norn-forn-oh' },
 	{
 		thai: 'สิงห์โตเล่นหาง',
 		english: 'A Lion Playing with Its Tail',
@@ -125,7 +125,7 @@ export const posture: { thai: string; english: string; pronounce: string }[] = [
 		english: 'Gliding into a Palace',
 		pronounce: 'Chui-chai-khao-wang'
 	},
-	{ thai: 'หนังหน้าไฟ', english: 'A Shadow Play in a Funeral', pronounce: 'Nang-na-fai' },
+	{ thai: 'หนังหน้าไฟ', english: 'A Shadow Play Before the Funeral', pronounce: 'Nang-na-fai' },
 	{
 		thai: 'เครือวัลย์พันไม้',
 		english: 'An Ivy Creeping Around a Tree',
@@ -186,5 +186,5 @@ export const posture: { thai: string; english: string; pronounce: string }[] = [
 		pronounce: 'Chak-kra-bee-see-ta'
 	},
 	{ thai: 'ประไลยวาต', english: 'A Catastrophic Wind', pronounce: 'Pra-lai-wat' },
-	{ thai: 'กินนรรำ', english: 'A Bird-Man Dancing ', pronounce: 'Kin-norn-ram' }
+	{ thai: 'กินนรรำ', english: 'A Kinnorn Dancing ', pronounce: 'Kin-norn-ram' }
 ];

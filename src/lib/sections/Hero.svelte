@@ -10,7 +10,7 @@
 	});
 </script>
 
-<div class="flex h-[100svh] flex-col bg-black text-white">
+<div class="flex h-[100svh] flex-col bg-gradient-to-br from-neutral-800 to-neutral-950 text-white">
 	<nav class="z-20 w-full border-b border-y-white bg-black text-center font-bold">
 		<div class="divide-x-white z-50 grid w-full grid-cols-4 divide-x [&>a]:p-2">
 			<a href="#past" class="hover:cursor-pointer hover:bg-gold">Past</a>

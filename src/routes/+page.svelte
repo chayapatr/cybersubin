@@ -6,9 +6,10 @@
 	import Future from '$lib/sections/Future.svelte';
 	import About from '$lib/sections/About.svelte';
 	import Dialog from '$lib/Components/Dialog.svelte';
+	import ElementDialog from '$lib/Components/ElementDialog.svelte';
 
 	import { onMount } from 'svelte';
-	import { openDialog } from '$lib/store';
+	import { openDialog, openElementDialog } from '$lib/store';
 
 	let current = '';
 
@@ -36,9 +37,15 @@
 	</div>
 {/if}
 
+{#if $openElementDialog}
+	<div class="fixed left-0 top-0 z-[100] h-[100dvh] w-screen">
+		<ElementDialog />
+	</div>
+{/if}
+
 <Hero />
 
-<div class="hero bg-black text-white">
+<div class="hero text-white">
 	<div class="grid w-full divide-y text-sm md:grid-cols-3 md:gap-y-12 md:divide-y-0 md:text-base">
 		{#each [['Past', '1924'], ['Present', '2017'], ['Future', '2024']] as text, i}
 			<div
