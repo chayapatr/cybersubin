@@ -4,6 +4,8 @@
 	import * as THREE from 'three';
 	import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 	import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+	import { DRACOLoader } from 'three/addons/loaders/DRACOLoader.js';
+	import { DRACOExporter } from 'three/addons/exporters/DRACOExporter.js';
 	import { slider } from '$lib/store';
 
 	export let i = 1;
@@ -86,11 +88,16 @@
 
 		const loader = new GLTFLoader();
 
+		const draco = new DRACOLoader();
+		draco.setDecoderPath(`https://www.gstatic.com/draco/v1/decoders/`);
+		draco.preload();
+
 		loadModel = (i) => {
 			clock = new THREE.Clock();
-
+			loader.setDRACOLoader(draco);
 			loader.load(
-				`/glb-optim/subin${i}-opt.glb`,
+				// `/glb-optim/subin${i}-opt.glb`,
+				`/glb-optim/${i}.glb`,
 				function (gltf) {
 					for (let i = 0; i < scene.children.length; i++) {
 						if (scene.children[i].type === 'Group') scene.remove(scene.children[i]);
