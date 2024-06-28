@@ -3,7 +3,7 @@
 	import { openElementDialog, element, slider } from '$lib/store';
 	import { elements } from '../elements';
 	let img = false;
-	let state = '';
+	let state = 'img';
 
 	const pose = 1;
 </script>
@@ -90,14 +90,14 @@
 				<button
 					class="btn w-full"
 					on:click={() => {
-						state = '';
-					}}>3D</button
+						state = 'img';
+					}}>Diagram</button
 				>
 				<button
 					class="btn w-full"
 					on:click={() => {
-						state = 'img';
-					}}>Diagram</button
+						state = '';
+					}}>3D</button
 				>
 				<button
 					class="btn w-full"
