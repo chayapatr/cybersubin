@@ -11,6 +11,8 @@
 	import { onMount } from 'svelte';
 	import { openDialog, openElementDialog } from '$lib/store';
 
+	// import { locale } from 'svelte-i18n';
+
 	let current = '';
 
 	onMount(() => {

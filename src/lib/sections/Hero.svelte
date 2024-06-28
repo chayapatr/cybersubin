@@ -32,21 +32,6 @@
 		</h5>
 	</div>
 
-	<!-- <div class="absolute bottom-0 right-0 p-4 md:p-6">
-		<div class="divide-x-white flex rounded-full text-lg md:text-xl">
-			<div
-				class="rounded-l-full border border-r-[0.5px] border-white px-3 hover:bg-white hover:text-black"
-			>
-				ก
-			</div>
-			<div
-				class="rounded-r-full border border-l-[0.5px] border-white px-3 hover:bg-white hover:text-black"
-			>
-				a
-			</div>
-		</div>
-	</div> -->
-
 	<div class="absolute left-0 top-0 z-0 h-[100svh] w-screen overflow-x-hidden">
 		<img
 			src="/hero/left-1.png"
@@ -73,4 +58,27 @@
 			alt=""
 		/>
 	</div>
+
+	<!-- <div class="absolute bottom-0 right-0 p-4 md:p-6">
+		<div class="divide-x-white flex rounded-full text-lg md:text-xl">
+			<button
+				on:click={() => {
+					locale.set('en');
+					sessionStorage.setItem('lang', 'en');
+				}}
+				class="rounded-l-full border border-r-[0.5px] border-white px-3 hover:bg-white hover:text-black"
+			>
+				a
+			</button>
+			<button
+				on:click={() => {
+					locale.set('th');
+					sessionStorage.setItem('lang', 'th');
+				}}
+				class="rounded-r-full border border-l-[0.5px] border-white px-3 hover:bg-white hover:text-black"
+			>
+				ก
+			</button>
+		</div>
+	</div> -->
 </div>

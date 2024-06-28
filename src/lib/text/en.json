@@ -1,0 +1,14 @@
+{
+	"hero": {
+		"description": "Evolving Cultural Heritage through Technology"
+	},
+	"menu": {
+		"past": "Past",
+		"present": "Present",
+		"future": "Future",
+		"about": "About"
+	},
+	"intro": {
+		"tagline": "year journey of Thai choreography from cultural root to integration with computer"
+	}
+}
