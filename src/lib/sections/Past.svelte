@@ -18,7 +18,7 @@
 	</div>
 	<div class="col-span-2">
 		<div class="relative w-full md:aspect-video md:border-y xl:border-none">
-			<img src="/cybersubin.png" class="min-h-full min-w-full object-cover" alt="" />
+			<img src="/maebot.png" class="min-h-full min-w-full object-cover" alt="" />
 			<div class="left-0 top-0 text-pretty p-6 md:absolute lg:w-11/12">
 				<p>
 					We begin our journey with "Mae Bot Yai" (the "Greater Fundamentals"), a set of 59
