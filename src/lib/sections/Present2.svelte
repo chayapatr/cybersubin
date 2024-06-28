@@ -18,7 +18,7 @@
 	</div>
 	<div class="mt-6 gap-4 space-y-8 md:col-span-2 md:mt-0">
 		<div class="aspect-[21/9] w-full overflow-hidden bg-neutral-600">
-			<img src="/intro/past.png" class="object-cover" alt="" />
+			<img src="/intro/present.png" class="object-cover" alt="" />
 		</div>
 		<div class="grid gap-6 px-6 text-white md:pl-0 lg:grid-cols-2 lg:gap-0 lg:px-0">
 			<div class="w-full text-balance lg:w-11/12">
