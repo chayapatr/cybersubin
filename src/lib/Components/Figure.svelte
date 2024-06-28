@@ -71,12 +71,12 @@
 			scene.children.forEach((child) => {
 				if (child.type === 'Group') {
 					const index = child.children.length - 1;
-					if (child.children[index].children.length === 2) {
-						child.children[index].children[1].position.set(0, i < 5 ? -20 : 0, 0);
-					}
+					// if (child.children[index].children.length === 2) {
+					// 	child.children[index].children[1].position.set(0, i < 5 ? -20 : 0, 0);
+					// }
 
-					// child.children[0].children[0].position.set(0, -20, 0);
-					// child.children[0];
+					child.children[0].children[0].position.set(0, i < 5 ? -20 : 0, 0);
+					child.children[0];
 				}
 			});
 			renderer.render(scene, camera);
@@ -88,7 +88,7 @@
 			clock = new THREE.Clock();
 
 			loader.load(
-				`/glb/subin${i}.glb`,
+				`/glb-optim/subin${i}-opt.glb`,
 				function (gltf) {
 					for (let i = 0; i < scene.children.length; i++) {
 						if (scene.children[i].type === 'Group') scene.remove(scene.children[i]);
