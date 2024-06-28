@@ -3,7 +3,7 @@
 	import { openDialog, current, slider } from '$lib/store';
 	import { posture } from '$lib/59';
 
-	let img = true;
+	let img = false;
 	let opacity = 0;
 </script>
 
@@ -81,16 +81,16 @@
 				</div>
 			</div>
 			<div class="mt-3 flex items-center justify-center gap-2 md:hidden">
-				<div>Image</div>
+				<div>3D</div>
 				<div
-					class={`flex aspect-[3/2] h-8 rounded-full border p-1 ${img ? '' : 'justify-end'}`}
+					class={`flex aspect-[3/2] h-8 rounded-full border p-1 ${img ? 'justify-end' : ''}`}
 					on:click={() => {
 						img = !img;
 					}}
 				>
 					<div class="flex aspect-square h-full rounded-full bg-white"></div>
 				</div>
-				<div>3D</div>
+				<div>Image</div>
 			</div>
 		</div>
 		<div
