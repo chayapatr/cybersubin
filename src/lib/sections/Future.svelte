@@ -21,7 +21,7 @@
 				choreographer, and even the audience to participate in altering the choreography of the
 				virtual agents by adjusting parameters that represent traditional Thai dance elements.
 			</p>
-			<button class="btn">Let's Experiment</button>
+			<a href="/lab" class="btn inline-block">Let's Experiment</a>
 		</div>
 	</div>
 	<div class="bg-red-500 absolute bottom-0 left-0 z-50 w-full p-6 text-4xl text-white">

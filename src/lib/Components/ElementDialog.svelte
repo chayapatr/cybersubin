@@ -51,7 +51,7 @@
 				{/if}
 				{#if state === 'detail'}
 					<div
-						class="absolute right-0 top-0 mb-4 aspect-[3/4] h-full w-full bg-black p-3 text-sm md:hidden"
+						class="absolute right-0 top-0 mb-4 aspect-[3/4] h-full w-full bg-black p-3 md:hidden"
 					>
 						<div class="h-3 w-full">{elements[$element].detail}</div>
 					</div>
