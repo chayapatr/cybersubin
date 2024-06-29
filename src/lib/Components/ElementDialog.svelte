@@ -2,6 +2,7 @@
 	import Figure from './Figure.svelte';
 	import { openElementDialog, element, slider } from '$lib/store';
 	import { elements } from '../elements';
+	import { locale, _ } from 'svelte-i18n';
 	let img = false;
 	let state = 'img';
 
@@ -62,7 +63,9 @@
 					<div
 						class="absolute right-0 top-0 mb-4 aspect-[3/4] h-full w-full bg-black p-3 md:hidden"
 					>
-						<div class="h-3 w-full">{elements[$element].detail}</div>
+						<div class="h-3 w-full">
+							{$locale === 'th' ? elements[$element].detail.th : elements[$element].detail.en}
+						</div>
 					</div>
 				{/if}
 			</div>
@@ -79,11 +82,12 @@
 					/>
 				</div>
 				<div class="p-1 text-sm">
-					{elements[$element].detail}
+					{$locale === 'th' ? elements[$element].detail.th : elements[$element].detail.en}
 				</div>
 			</div>
 			<div class="mt-3 border-l border-orange pl-2 text-xs font-bold text-orange md:hidden">
-				Pichet Klunchun performing Movement {elements[$element].pose}
+				{$_('dialog.caption')}
+				{elements[$element].pose}
 			</div>
 			<div class="mt-3 flex w-full items-center justify-between gap-2 md:hidden">
 				<!-- <div>3D</div>
@@ -100,24 +104,25 @@
 					class="btn w-full"
 					on:click={() => {
 						state = 'img';
-					}}>Diagram</button
+					}}>{$_('dialog.diagram')}</button
 				>
 				<button
 					class="btn w-full"
 					on:click={() => {
 						state = '';
-					}}>3D</button
+					}}>{$_('dialog.3d')}</button
 				>
 				<button
 					class="btn w-full"
 					on:click={() => {
 						state = 'detail';
-					}}>Detail</button
+					}}>{$_('dialog.detail')}</button
 				>
 			</div>
 		</div>
 		<div class="hidden border-l border-orange pl-2 font-bold text-orange md:block">
-			Pichet Klunchun performing Movement {elements[$element].pose}
+			{$_('dialog.caption')}
+			{elements[$element].pose}
 		</div>
 		<div
 			class="absolute right-0 top-0 m-2 cursor-pointer text-white hover:font-bold"

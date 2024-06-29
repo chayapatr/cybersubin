@@ -1,5 +1,8 @@
 {
+	"try": "Try It!",
 	"hero": {
+		"cyber": "cyber",
+		"subin": "subin",
 		"description": "Evolving Cultural Heritage through Technology"
 	},
 	"menu": {
@@ -9,6 +12,70 @@
 		"about": "About"
 	},
 	"intro": {
-		"tagline": "year journey of Thai choreography from cultural root to integration with computer"
+		"tagline": "year journey of Thai choreography from cultural root to integration with computer",
+		"p1": "Traditional dance forms serve as living cultural heritage, with choreographic knowledge transmitted through embodied practices. While digitization has enabled preservation, the deeper layers of tacit knowledge and improvisation remain frozen. This research introduces an approach to computationally formalize traditional dance knowledge as an interactive model, combining human dancers with virtual partners powered by computational systems derived from dance principles.",
+		"p2": "A multidisciplinary team developed a Human-AI system based on the \"No. 60\" principles established by Thai choreographer Pichet Klunchun, creating computational procedures to replicate the effects of the principles. This paradigm allows practitioners to interact with computational manifestations of ancestral choreographic knowledge, acknowledging non-Western knowledge systems often overlooked in colonial understandings of AI.",
+		"button": "Learn More",
+		"past": "1924",
+		"present": "2017",
+		"future": "2024"
+	},
+	"past": {
+		"title": "Mae Bot Yai",
+		"title2": "Mae Bot Yai",
+		"hero1": {
+			"intro": "One might think that innovation and preservation are on opposite ends, but in 1924, the arrival of camera technology allowed the knowledge of \"Mae Bot Yai\" to be recorded and formalized, creating a record of Thai dance techniques that are still used to this day.",
+			"img": "We begin our journey with \"Mae Bot Yai\" (the \"Greater Fundamentals\"), a set of 59 interconnected poses that constitute the foundation of traditional Thai dance. These fundamentals enable dancers to execute the demanding choreography of \"Khon\", a Thai classical court masked dance with a history spanning centuries.",
+			"btn": {
+				"dance": "Thai Traditional Dance",
+				"history": "History of Mae Bot Yai"
+			}
+		},
+		"movement": "Movement",
+		"caption": "59 poses that constitute the foundation of traditional Thai dance",
+		"pose": "Select the pose of interest and see its 3D recording",
+		"hero2": {
+			"tagline": "Understand the Past to Understand the Future",
+			"caption": "Mae Bot Yai recorded on camera in 1924",
+			"p1": "The Mae Bot Yai fundamentals consist of highly stylized and codified gestures and body positions derived from Indian dance traditions as well as Thai culture, including movements with symbolic hand gestures, graceful walking patterns, and varied arm positions. Additionally, Khon features distinctive footwork and lower body movements such as circular stepping patterns, fluid knee movements, and rhythmic stamping actions. Other characteristics are elaborate hand and finger movements like intricate finger curls and stylized finger poses.",
+			"p2": "There is also coordinated isolation and articulation of various body parts, muscles, and joints to create flowing, lyrical motions while maintaining firm stances. Dancers employ techniques like shifts in body weight, controlled torso movements, and the integration of arm and leg actions. Fundamental to executing the Mae Bot Yai properly is achieving smooth transitions between poses and an unbroken continuity of movement."
+		}
+	},
+	"present": {
+		"hero1": {
+			"head": "The Diagram",
+			"caption": "This is a 100 years journey of choreography from culture to computer"
+		},
+		"6elm": {
+			"intro": "In 2017, Klunchun and his dance company embarked on a project titled \"No. 60,\" which centered around Klunchun's deconstruction of the fundamental set of 59 interconnected poses of Mae Bot Yai.",
+			"caption": "Six elements were discovered from the analysis of the Mae Bot Yai fundamentals, which aim to empower choreographers and dancers to invent the next movement (the imaginary 60th movement, hence the name \"No. 60\")",
+			"energy": "Energy",
+			"circle": "Circles and Curves",
+			"axis": "Axis Points",
+			"space": "External Body Space",
+			"limb": "Synchronic Limbs",
+			"relation": "Shifting Relations"
+		},
+		"hero2": {
+			"tagline": "From Deconstruction to Reconstruction",
+			"caption": "Pichet Klunchun's performance in Japan",
+			"p1": "Klunchun deconstructed the embodied knowledge within the Mae Bot Yai, the fundamental poses underlying Thai traditional performance. He created diagrams and annotations analyzing the 59 constituent movements and postures to catalyze a reimagining of classical Thai dance from a novel perspective. This approach offers an introduction to Thai dance that is free from mythological or ideological influences.",
+			"p2": "Through meticulous movement analysis, Klunchun sought to extract choreographic principles from the Mae Bot Yai fundamentals and gain new insight into their possibilities. His work aims to deconstruct and reassemble the elements of traditional vocabulary, creating innovative combinations that could revitalize the form."
+		}
+	},
+	"future": {
+		"hero1": {
+			"p1": "While the digitization approach can preserve the visual form of dance, the deeper knowledge and improvisational techniques remain frozen in time rather than flourishing as living practices.",
+			"p2": "In 2024, a multidisciplinary team analyzed and translated the principles of Mae Bot Yai and No. 60 into an interactive computational model that extends beyond a mere static recording of a dance performance. They developed an interactive system that allows the dancer, choreographer, and even the audience to participate in altering the choreography of the virtual agents by adjusting parameters that represent traditional Thai dance elements."
+		},
+		"hero2": {
+			"p1": "The project was debuted at the National Theatre in Taiwan in March 2024. As the human dancer physically challenges, resists, follows, and improvises with the virtual dance partner's computational interpretations of traditional dance vocabularies, intriguing frictions arise that highlight each intelligence's distinct perspectives and capabilities. This dynamism suggests rich questions around autonomy, influence, control, and co-dependence as humans and virtual agents entangle through points of resonance and dissonance. Such interplay prompts vital discourses on the essence of the human spirit and freedom when choreographically coupled with non-human outputs operating in the same social and cultural space."
+		}
+	},
+	"dialog": {
+		"caption": "Pichet Klunchun performing Movement",
+		"diagram": "Diagram",
+		"3d": "3D",
+		"detail": "Detail"
 	}
 }

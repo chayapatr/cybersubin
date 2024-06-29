@@ -1,25 +1,20 @@
 <script>
 	import Title from '$lib/Components/Title.svelte';
+	import { _ } from 'svelte-i18n';
 </script>
 
 <div class="relative flex min-h-[80svh] overflow-hidden text-white md:ml-10 lg:min-h-[100svh]">
 	<div class="z-50 grid md:grid-cols-3">
 		<div class="p-8">
-			<Title head="The Future" title="Cyber Subin" color="text-red" />
+			<Title head={$_('menu.future')} title="Cyber Subin" color="text-red" />
 		</div>
 		<div class="md:hidden lg:block" />
 		<div class="space-y-8 p-8 md:col-span-2 lg:col-span-1">
 			<p class="xl:w-11/12">
-				While the digitization approach can preserve the visual form of dance, the deeper knowledge
-				and improvisational techniques remain frozen in time rather than flourishing as living
-				practices.
+				{$_('future.hero1.p1')}
 			</p>
 			<p class="xl:w-11/12">
-				In 2024, a multidisciplinary team analyzed and translated the principles of Mae Bot Yai and
-				No. 60 into an interactive computational model that extends beyond a mere static recording
-				of a dance performance. They developed an interactive system that allows the dancer,
-				choreographer, and even the audience to participate in altering the choreography of the
-				virtual agents by adjusting parameters that represent traditional Thai dance elements.
+				{$_('future.hero1.p2')}
 			</p>
 			<!-- <a href="https://opencyberdance.pages.dev" class="btn inline-block">Let's Experiment</a> -->
 		</div>
@@ -47,7 +42,7 @@
 		frameborder="0"
 	></iframe>
 	<div class="absolute right-0 top-0 p-3 md:p-6">
-		<h2 class={`text-3xl font-bold text-red md:w-min md:text-6xl`}>Try it!</h2>
+		<h2 class={`text-3xl font-bold text-red md:w-min md:text-6xl`}>{$_('try')}</h2>
 	</div>
 </div>
 
@@ -56,29 +51,17 @@
 	id="past-end"
 >
 	<div class="flex flex-col gap-4 px-6 md:gap-16 lg:px-8">
-		<Title head="The Future" title="Cyber Subin" color="text-red" />
+		<Title head={$_('menu.future')} title="Cyber Subin" color="text-red" />
 	</div>
 	<div class="mt-6 gap-4 space-y-8 md:col-span-2 md:mt-0">
 		<div class="aspect-[21/9] w-full overflow-hidden bg-neutral-600">
 			<img src="/cybersubin-2.png" class="center min-h-full min-w-full object-cover" alt="" />
 		</div>
 		<div class="grid gap-6 px-6 text-white md:pl-0 lg:grid-cols-2 lg:gap-0 lg:px-0">
-			<div class="w-full text-balance lg:w-11/12">
-				<p>
-					A multidisciplinary team developed a Human-AI system based on the "No. 60" principles
-					established by Thai choreographer Pichet Klunchun, creating computational procedures to
-					replicate the effects of the principles. This paradigm allows practitioners to interact
-					with computational manifestations of ancestral choreographic knowledge, acknowledging
-					non-Western knowledge systems often overlooked in colonial understandings of AI.
-				</p>
-			</div>
+			<div></div>
 			<div class="w-full space-y-6 text-balance lg:w-11/12">
 				<p>
-					A multidisciplinary team developed a Human-AI system based on the "No. 60" principles
-					established by Thai choreographer Pichet Klunchun, creating computational procedures to
-					replicate the effects of the principles. This paradigm allows practitioners to interact
-					with computational manifestations of ancestral choreographic knowledge, acknowledging
-					non-Western knowledge systems often overlooked in colonial understandings of AI.
+					{$_('future.hero2.p1')}
 				</p>
 			</div>
 		</div>

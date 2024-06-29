@@ -3,6 +3,7 @@
 	import Card from '$lib/Components/Card.svelte';
 	import { current } from '$lib/store';
 	import { onMount } from 'svelte';
+	import { locale } from 'svelte-i18n';
 
 	// Credit: Hoang Tran (https://fb.com/99.hoangtran)
 
@@ -153,8 +154,11 @@
 		<div id="ground"></div>
 		<div class="z-50" id="text">
 			<p>
-				POSE {$current}
-				{posture[$current - 1].english.toUpperCase()}
+				{$locale === 'th' ? 'แม่บทที่' : 'POSE'}
+				{$current}
+				{$locale === 'th'
+					? posture[$current - 1].thai
+					: posture[$current - 1].english.toUpperCase()}
 			</p>
 		</div>
 	</div>

@@ -3,17 +3,16 @@
 	import Description from '$lib/Components/Description.svelte';
 	import Title from '$lib/Components/Title.svelte';
 	import { mvtSet } from '$lib/store';
+	import { _ } from 'svelte-i18n';
 </script>
 
 <div
 	class="relative grid grid-cols-1 bg-black text-white md:ml-10 md:mt-[calc(-100svh_-_2.6rem)] xl:grid-cols-3"
 >
 	<div class="space-y-8 p-6 lg:px-8">
-		<Title head="The Past" title="Mae Bot Yai" color="text-gold" />
+		<Title head={$_('menu.past')} title={$_('past.title')} color="text-gold" />
 		<p class="text-balance lg:w-11/12">
-			One might think that innovation and preservation are on opposite ends, but in 1924, the
-			arrival of camera technology allowed the knowledge of "Mae Bot Yai" to be recorded and
-			formalized, creating a record of Thai dance techniques that are still used to this day.
+			{$_('past.hero1.intro')}
 		</p>
 	</div>
 	<div class="col-span-2">
@@ -21,30 +20,27 @@
 			<img src="/maebot.png" class="min-h-full min-w-full object-cover" alt="" />
 			<div class="left-0 top-0 text-pretty p-6 md:absolute lg:w-11/12">
 				<p>
-					We begin our journey with "Mae Bot Yai" (the "Greater Fundamentals"), a set of 59
-					interconnected poses that constitute the foundation of traditional Thai dance. These
-					fundamentals enable dancers to execute the demanding choreography of “Khon”, a Thai
-					classical court masked dance with a history spanning centuries.
+					{$_('past.hero1.img')}
 				</p>
 			</div>
 		</div>
 		<div class="bottom-0 hidden flex-col gap-4 p-6 pt-0 md:absolute md:flex xl:hidden">
 			<a href="https://disco.teak.fi/asia/thai-classical-dance/" class="btn"
-				>Thai Traiditional Dance ↗</a
+				>{$_('past.hero1.btn.dance')} ↗</a
 			>
 			<a
 				href="https://www.google.com/books/edition/Lives_in_Motion/DKLfEAAAQBAJ?hl=en&gbpv=1&dq=Mae+Bot+Yai&pg=PT61&printsec=frontcover"
-				class="btn">History of Mae Bot Yai ↗</a
+				class="btn">{$_('past.hero1.btn.history')} ↗</a
 			>
 		</div>
 	</div>
 	<div class="bottom-0 flex flex-col gap-4 p-6 pt-0 md:absolute md:hidden lg:px-8 xl:flex">
 		<a href="https://disco.teak.fi/asia/thai-classical-dance/" class="btn"
-			>Thai Traiditional Dance ↗</a
+			>{$_('past.hero1.btn.dance')} ↗</a
 		>
 		<a
 			href="https://www.google.com/books/edition/Lives_in_Motion/DKLfEAAAQBAJ?hl=en&gbpv=1&dq=Mae+Bot+Yai&pg=PT61&printsec=frontcover"
-			class="btn">History of Mae Bot Yai ↗</a
+			class="btn">{$_('past.hero1.btn.history')} ↗</a
 		>
 	</div>
 </div>
@@ -55,9 +51,9 @@
 	<Description
 		textColor="text-gold"
 		text={{
-			left: 'Try it!',
-			right: 'Mae Bot Yai',
-			rightDesc: '59 poses that constitute the foundation of traditional Thai dance'
+			left: $_('try'),
+			right: $_('past.title2'),
+			rightDesc: $_('past.caption')
 		}}
 	>
 		<div class="grid h-min w-full grid-cols-2 justify-center gap-4 md:flex">
@@ -73,7 +69,7 @@
 						$mvtSet = i;
 					}}
 					class={`mvt-btn ${$mvtSet === i ? 'bg-white font-bold text-black' : ''}`}
-					><span class="hidden xl:inline-block">Movement</span>
+					><span class="hidden xl:inline-block">{$_('past.movement')}</span>
 					{(i - 1) * 20 + 1}-{Math.min(i * 20, 59)}</button
 				>
 			{/each}
@@ -89,7 +85,7 @@
 			{/key}
 		</div>
 		<div class="absolute bottom-0 m-4 flex w-full justify-center">
-			<p class="max-w-xs text-center">Select the pose of interest and see its 3D recording</p>
+			<p class="max-w-xs text-center">{$_('past.pose')}</p>
 		</div>
 	</div>
 </div>
@@ -99,10 +95,10 @@
 	id="past-end"
 >
 	<div class="flex flex-col gap-4 px-6 md:gap-16 lg:px-8">
-		<Title head="The Past" title="Mae Bot Yai" color="text-gold" />
-		<p class="max-w-64 text-white">Understand the Past to Understand the Future</p>
+		<Title head={$_('menu.past')} title={$_('past.title')} color="text-gold" />
+		<p class="max-w-64 text-white">{$_('past.hero2.tagline')}</p>
 		<div class="flex border-l border-l-gold pl-4 text-sm text-gold">
-			<p class="max-w-32">Mae Bot Yai recorded on camera in 1924</p>
+			<p class="max-w-32">{$_('past.hero2.caption')}</p>
 		</div>
 	</div>
 	<div class="mt-6 gap-4 space-y-8 md:col-span-2 md:mt-0">
@@ -112,21 +108,12 @@
 		<div class="grid gap-6 px-6 text-white md:pl-0 lg:grid-cols-2 lg:gap-0 lg:px-0">
 			<div class="w-full text-balance lg:w-11/12">
 				<p>
-					Traditional dance forms serve as living cultural heritage, with choreographic knowledge
-					transmitted through embodied practices. While digitization has enabled preservation, the
-					deeper layers of tacit knowledge and improvisation remain frozen. This research introduces
-					an approach to computationally formalize traditional dance knowledge as an interactive
-					model, combining human dancers with virtual partners powered by computational systems
-					derived from dance principles.
+					{$_('past.hero2.p1')}
 				</p>
 			</div>
 			<div class="w-full space-y-6 text-balance lg:w-11/12">
 				<p>
-					A multidisciplinary team developed a Human-AI system based on the "No. 60" principles
-					established by Thai choreographer Pichet Klunchun, creating computational procedures to
-					replicate the effects of the principles. This paradigm allows practitioners to interact
-					with computational manifestations of ancestral choreographic knowledge, acknowledging
-					non-Western knowledge systems often overlooked in colonial understandings of AI.
+					{$_('past.hero2.p2')}
 				</p>
 			</div>
 		</div>

@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { openElementDialog, element } from '$lib/store';
 	import { onMount } from 'svelte';
+	import { _ } from 'svelte-i18n';
 
 	// let lines: { x: number; y: number }[][] = [];
 
@@ -39,7 +40,7 @@
 							$element = x[0];
 							$openElementDialog = true;
 						}}
-						class="absolute {x[2]} text-white hover:font-bold">{x[1]}</button
+						class="absolute {x[2]} text-white hover:font-bold">{$_(`present.6elm.${x[0]}`)}</button
 					>
 				{/each}
 			</div>
@@ -48,9 +49,7 @@
 	<div class="absolute left-0 top-0 space-y-3 p-6 md:ml-12 lg:hidden">
 		<h3 class="text-3xl text-orange">No. 60</h3>
 		<p class="text-pretty text-white">
-			Six elements were discovered from the analysis of the Mae Bot Yai fundamentals, which aim to
-			empower choreographers and dancers to invent the next movement (the imaginary 60th movement),
-			hence the name "No. 60"
+			{$_('present.6elm.caption')}
 		</p>
 	</div>
 	<div
@@ -62,7 +61,7 @@
 				on:click={() => {
 					$openElementDialog = true;
 					$element = x[0];
-				}}>{x[1]}</button
+				}}>{$_(`present.6elm.${x[0]}`)}</button
 			>
 		{/each}
 	</div>

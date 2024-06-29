@@ -4,6 +4,7 @@
 	import { fade, scale } from 'svelte/transition';
 	import Description from '../Components/Description.svelte';
 	import SixElementsContent from './SixElements.svelte';
+	import { _ } from 'svelte-i18n';
 
 	let current = 0;
 	let show = false;
@@ -57,15 +58,18 @@
 	</div> -->
 	<div class="grid p-6 pt-12 md:grid-cols-3 lg:px-10" bind:this={sectionTop}>
 		<div>
-			<Title head="The Present" title="No.60" color="text-orange" />
+			<Title head={$_('menu.present')} title="No.60" color="text-orange" />
 		</div>
 		<div />
 		<div class="flex-col items-end gap-2 pt-8 md:flex md:text-right lg:mx-10 lg:pt-0">
-			<h4 class="text-3xl text-orange">The Diagram</h4>
+			<h4 class="text-3xl text-orange">{$_('present.hero1.head')}</h4>
 			<p class="max-w-xs text-white">
-				This is a 100 years journey of choreography from culture to computer
+				{$_('present.hero1.caption')}
 			</p>
 		</div>
+	</div>
+	<div class="p-6 text-white lg:px-10">
+		{$_('present.6elm.intro')}
 	</div>
 	<div class="sticky top-0">
 		<div class="relative">
@@ -114,15 +118,13 @@
 							<Description
 								textColor="text-orange"
 								text={{
-									left: 'Try it!',
+									left: $_('try'),
 									right: 'No.60',
 									rightDesc: ''
 								}}
 							>
 								<p class="text-white">
-									Six elements were discovered from the analysis of the Mae Bot Yai fundamentals,
-									which aim to empower choreographers and dancers to invent the next movement (the
-									imaginary 60th movement, hence the name "No. 60")
+									{$_('present.6elm.caption')}
 								</p>
 							</Description>
 						</div>

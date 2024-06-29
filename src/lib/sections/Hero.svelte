@@ -1,5 +1,6 @@
 <script>
 	import { onMount } from 'svelte';
+	import { locale, _ } from 'svelte-i18n';
 
 	let parallax = 0;
 
@@ -13,10 +14,10 @@
 <div class="flex h-[100svh] flex-col bg-gradient-to-br from-neutral-800 to-neutral-950 text-white">
 	<nav class="z-20 w-full border-b border-y-white bg-black text-center font-bold">
 		<div class="divide-x-white z-50 grid w-full grid-cols-4 divide-x [&>a]:p-2">
-			<a href="#past" class="hover:cursor-pointer hover:bg-gold">Past</a>
-			<a href="#present" class="hover:cursor-pointer hover:bg-orange">Present</a>
-			<a href="#future" class="hover:cursor-pointer hover:bg-red">Future</a>
-			<a href="#about" class="hover:cursor-pointer hover:bg-neutral-800">About</a>
+			<a href="#past" class="hover:cursor-pointer hover:bg-gold">{$_('menu.past')}</a>
+			<a href="#present" class="hover:cursor-pointer hover:bg-orange">{$_('menu.present')}</a>
+			<a href="#future" class="hover:cursor-pointer hover:bg-red">{$_('menu.future')}</a>
+			<a href="#about" class="hover:cursor-pointer hover:bg-neutral-800">{$_('menu.about')}</a>
 		</div>
 	</nav>
 	<div class="flex h-full flex-col justify-between gap-16 p-6 md:items-center md:justify-center">
@@ -28,7 +29,7 @@
 			<h4 class="text-4xl">Open Lab</h4>
 		</div>
 		<h5 class="max-w-[12rem] text-base md:max-w-sm md:text-center md:text-xl">
-			Evolving Cultural Heritage through Technology
+			{$_('hero.description')}
 		</h5>
 	</div>
 
@@ -59,7 +60,7 @@
 		/>
 	</div>
 
-	<!-- <div class="absolute bottom-0 right-0 p-4 md:p-6">
+	<div class="absolute bottom-0 right-0 p-4 md:p-6">
 		<div class="divide-x-white flex rounded-full text-lg md:text-xl">
 			<button
 				on:click={() => {
@@ -80,5 +81,5 @@
 				ก
 			</button>
 		</div>
-	</div> -->
+	</div>
 </div>

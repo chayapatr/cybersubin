@@ -10,7 +10,7 @@ Evolving Culture Heritage through Techonology
 - [x] Hero Character + Parallel Effect
 - [x] Sidebar Highlight
 - [x] Add Images
-- [ ] i18n
+- [x] i18n
 
 ### The Past
 
