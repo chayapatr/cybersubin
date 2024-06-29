@@ -13,7 +13,7 @@
 </script>
 
 {#if $isLoading}
-	<div class="text-white">Changing Language...</div>
+	<div class="p-2 text-white">Changing Language...</div>
 {:else}
 	<slot></slot>
 {/if}
