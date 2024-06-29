@@ -52,7 +52,7 @@
 		textColor="text-gold"
 		text={{
 			left: $_('try'),
-			right: $_('past.title2'),
+			right: $_('past.title'),
 			rightDesc: $_('past.caption')
 		}}
 	>
