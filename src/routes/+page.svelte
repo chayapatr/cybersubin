@@ -100,16 +100,16 @@
 	>
 		<ul class="divide-x-white grid w-full grid-cols-4 divide-x [&>li]:p-2">
 			<li class={`hover:cursor-pointer  ${current === 'past' ? 'bg-gold' : ''}`}>
-				<a href="#past">Past</a>
+				<a href="#past">{$_('menu.past')}</a>
 			</li>
 			<li class={`hover:cursor-pointer ${current === 'present' ? 'bg-orange' : ''}`}>
-				<a href="#present">Present</a>
+				<a href="#present">{$_('menu.present')}</a>
 			</li>
 			<li class={`hover:cursor-pointer ${current === 'future' ? 'bg-red' : ''}`}>
-				<a href="#future">Future</a>
+				<a href="#future">{$_('menu.future')}</a>
 			</li>
 			<li class={`hover:cursor-pointer ${current === 'about' ? 'bg-black' : ''}`}>
-				<a href="#about">About</a>
+				<a href="#about">{$_('menu.about')}</a>
 			</li>
 		</ul>
 	</nav>
