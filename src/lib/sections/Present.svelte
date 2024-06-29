@@ -99,7 +99,7 @@
 						</div>
 					{/each}
 					<div
-						class={`relative flex aspect-[2/3] w-full items-center justify-center overflow-hidden text-lg transition-all duration-500`}
+						class={`relative hidden aspect-[2/3] w-full items-center justify-center overflow-hidden text-lg transition-all duration-500 lg:flex`}
 						style={`${current > 2 ? ` transform: ${transform(59)}; opacity: 0.4;` : ''} `}
 					>
 						{#if current > 0 && current < 4}

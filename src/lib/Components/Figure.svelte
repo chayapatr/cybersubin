@@ -92,6 +92,8 @@
 		draco.setDecoderPath(`https://www.gstatic.com/draco/v1/decoders/`);
 		draco.preload();
 
+		$slider = 0;
+
 		loadModel = (i) => {
 			clock = new THREE.Clock();
 			loader.setDRACOLoader(draco);
@@ -113,7 +115,6 @@
 						// let animation = mixer.clipAction(gltf.animations[0]);
 						// animation.setLoop(THREE.LoopOnce);
 						// });
-						$slider = 0;
 						mixer.clipAction(gltf.animations[0]).play();
 					}
 				},

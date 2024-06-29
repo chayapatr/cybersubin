@@ -28,6 +28,15 @@
 			>
 				{#key $element}
 					<Figure i={pose} seek={$slider} />
+					<div class="absolute bottom-0 left-0 z-50 mb-2 hidden h-8 w-full px-4 lg:flex">
+						<input
+							type="range"
+							name=""
+							bind:value={$slider}
+							class="mb-6 h-1 w-full cursor-pointer appearance-none rounded-lg bg-neutral-500 accent-neutral-200 lg:hidden"
+							id=""
+						/>
+					</div>
 					{#if state === ''}
 						<div class="absolute bottom-0 left-0 z-50 mb-2 h-8 w-full px-4">
 							<input
