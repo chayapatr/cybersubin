@@ -36,6 +36,14 @@
 			<div class="relative h-full w-full">
 				{#each [['axis', 'Axis Points', 'top-[-6%] left-[7%]'], ['relation', 'Shifting Relations', '-top-[6%] left-[67%]'], ['limb', 'Synchronic Limbs', 'top-[32%] left-[0%]'], ['circle', 'Circle & Curves', 'top-[85%] left-[5%]'], ['space', 'External Body Space', 'top-[85%] left-[76%]'], ['energy', 'Energy', 'top-[59%] left-[75%]']] as x}
 					<button
+						on:mouseenter={() => {
+							current = x[0];
+						}}
+						on:mouseleave={() => {
+							setTimeout(() => {
+								current = '';
+							}, 300);
+						}}
 						on:click={() => {
 							$element = x[0];
 							$openElementDialog = true;
