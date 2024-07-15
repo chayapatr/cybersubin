@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { openElementDialog, element } from '$lib/store';
+	import { openElementDialog, element, current } from '$lib/store';
 	import { onMount } from 'svelte';
 	import { _ } from 'svelte-i18n';
 
@@ -9,7 +9,7 @@
 	// 	return Math.sqrt((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2));
 	// };
 
-	let current = '';
+	let pose = '';
 
 	onMount(() => {});
 </script>
@@ -24,7 +24,7 @@
 		<div class="absolute left-0 top-0 z-[100] hidden h-full w-full xl:block">
 			{#each ['axis', 'relation', 'limb', 'circle', 'space', 'energy'] as x}
 				<img
-					style={`opacity: ${current === x || !current ? '100' : '10'}%`}
+					style={`opacity: ${pose === x || !pose ? '100' : '10'}%`}
 					class="absolute left-0 top-0 h-full w-full transition-all"
 					src={`/6-elements/${x}.png`}
 					alt=""
@@ -37,11 +37,11 @@
 				{#each [['axis', 'Axis Points', 'top-[-6%] left-[7%]'], ['relation', 'Shifting Relations', '-top-[6%] left-[67%]'], ['limb', 'Synchronic Limbs', 'top-[32%] left-[0%]'], ['circle', 'Circle & Curves', 'top-[85%] left-[5%]'], ['space', 'External Body Space', 'top-[85%] left-[76%]'], ['energy', 'Energy', 'top-[59%] left-[75%]']] as x}
 					<button
 						on:mouseenter={() => {
-							current = x[0];
+							pose = x[0];
 						}}
 						on:mouseleave={() => {
 							setTimeout(() => {
-								current = '';
+								pose = '';
 							}, 300);
 						}}
 						on:click={() => {
