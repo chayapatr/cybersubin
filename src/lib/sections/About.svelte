@@ -112,7 +112,7 @@
 			</ul>
 
 			<ul>
-				<li><span class="font-bold">Music Director and Composer:</span></li>
+				<li><span class="font-bold">Music AI Director and Composer:</span></li>
 				<li>Lamtharn Hantrakul</li>
 			</ul>
 
